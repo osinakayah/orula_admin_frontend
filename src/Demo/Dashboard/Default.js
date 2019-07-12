@@ -462,7 +462,7 @@ class Dashboard extends React.Component {
                             </Card.Body>
                         </Card>
                     </Col> */}
-                    {/* <Col md={6} xl={8} className='m-b-30'>
+                    <Col md={6} xl={8} className='m-b-30'>
                         <Tabs defaultActiveKey="today" id="uncontrolled-tab-example">
                             <Tab eventKey="today" title="Today">
                                 {tabContent}
@@ -474,7 +474,7 @@ class Dashboard extends React.Component {
                                 {tabContent}
                             </Tab>
                         </Tabs>
-                    </Col> */}
+                    </Col>
                     {/* <ModalComponent/> */}
                     {/* <LoaderComponent/>    */}
                 </Row>
