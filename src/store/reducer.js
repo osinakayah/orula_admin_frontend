@@ -1,10 +1,10 @@
 import * as actionTypes from './actions';
-import config from './../config';
+// import config from './../config';
 
 const initialState = {
     isOpen: [], //for active default menu
     isTrigger: [], //for active default menu, set blank for horizontal
-    ...config,
+    // ...config,
     isFullScreen: false, // static can't change
 };
 

@@ -10,7 +10,7 @@ import Breadcrumb from './Breadcrumb';
 import Loader from "../Loader";
 import routes from "../../../routes";
 import Aux from "../../../hoc/_Aux";
-import * as actionTypes from "../../../store/actions";
+import NavigationActions from '../../../Redux/NavigationRedux'
 
 import './app.scss';
 
@@ -87,18 +87,18 @@ class AdminLayout extends Component {
 
 const mapStateToProps = state => {
     return {
-        defaultPath: state.defaultPath,
-        isFullScreen: state.isFullScreen,
-        collapseMenu: state.collapseMenu,
-        configBlock: state.configBlock,
-        layout: state.layout
+        defaultPath: state.nav.defaultPath,
+        isFullScreen: state.nav.isFullScreen,
+        collapseMenu: state.nav.collapseMenu,
+        configBlock: state.nav.configBlock,
+        layout: state.nav.layout
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFullScreenExit: () => dispatch({type: actionTypes.FULL_SCREEN_EXIT}),
-        onComponentWillMount: () => dispatch({type: actionTypes.COLLAPSE_MENU})
+        onFullScreenExit: () => dispatch(NavigationActions.fullScreenExit()),
+        onComponentWillMount: () => dispatch(NavigationActions.collapseMenu())
     }
 };
 

@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 
 import Aux from "../../../../../../hoc/_Aux";
 import DEMO from "../../../../../../store/constant";
-import * as actionTypes from "../../../../../../store/actions";
+// import * as actionTypes from "../../../../../../store/actions";
+import NavigationActions from '../../../../../../Redux/NavigationRedux'
 import NavIcon from './../NavIcon';
 import NavBadge from './../NavBadge';
 import NavItem from "../NavItem";
@@ -104,16 +105,19 @@ class NavCollapse extends Component {
 
 const mapStateToProps = state => {
     return {
-        layout: state.layout,
-        isOpen: state.isOpen,
-        isTrigger: state.isTrigger
+        layout: state.nav.layout,
+        isOpen: state.nav.isOpen,
+        isTrigger: state.nav.isTrigger
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onCollapseToggle: (id, type) => dispatch({type: actionTypes.COLLAPSE_TOGGLE, menu: {id: id, type: type}}),
-        onNavCollapseLeave: (id, type) => dispatch({type: actionTypes.NAV_COLLAPSE_LEAVE, menu: {id: id, type: type}})
+        // onCollapseToggle: (id, type) => dispatch({type: actionTypes.COLLAPSE_TOGGLE, menu: {id: id, type: type}}),
+        // onNavCollapseLeave: (id, type) => dispatch({type: actionTypes.NAV_COLLAPSE_LEAVE, menu: {id: id, type: type}})
+
+        onCollapseToggle: (id, type) => dispatch(NavigationActions.collapseToggle({id: id, type: type})),
+        onNavCollapseLeave: (id, type) => dispatch(NavigationActions.navCollapseLeave({id: id, type: type}))
     }
 };
 
