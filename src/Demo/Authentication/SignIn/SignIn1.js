@@ -21,7 +21,7 @@ class SignUp1 extends React.Component {
                         <div className="card">
                             <div className="card-body text-center">
                                 <div className="mb-4">
-                                    <i className="feather icon-unlock auth-icon"/>
+                                    <i className="feather icon-unlock auth-icon"/><h6>Orula Admin</h6>
                                 </div>
                                 <h3 className="mb-4">Login</h3>
                                 <div className="input-group mb-3">

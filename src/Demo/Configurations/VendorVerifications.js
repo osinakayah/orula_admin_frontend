@@ -10,7 +10,7 @@ class VendorVerifications extends Component {
             <Aux>
                 <Row>
                     <Col>
-                        <Card title='Hello Card' isOption>
+                        <Card title='Verify A Vendor' isOption>
                             <p>
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

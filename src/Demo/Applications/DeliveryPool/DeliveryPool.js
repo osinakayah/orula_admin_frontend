@@ -42,7 +42,7 @@ class DeliveryPool extends Component {
                                     <td>Cynthia Ezechukwu</td>
                                     <td>&#8358;1500</td>
                                     <td>27/07/19 10:33am</td>
-                                    <td>Standard</td>
+                                    <td>Scheduled</td>
                                     <td>Daniel Abayomi</td>
                                     <td><Badge variant="warning">Running</Badge></td>
                                     <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>
@@ -52,7 +52,7 @@ class DeliveryPool extends Component {
                                     <td>Cynthia Ezechukwu</td>
                                     <td>&#8358;1500</td>
                                     <td>27/07/19 13:25pm</td>
-                                    <td>Standard</td>
+                                    <td>Instant</td>
                                     <td>Daniel Abayomi</td>
                                     <td><Badge variant="warning">Running</Badge></td>
                                     <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>

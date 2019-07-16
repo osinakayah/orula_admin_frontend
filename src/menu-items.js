@@ -221,7 +221,7 @@ export default {
                     title: 'Verified Vendors',
                     type: 'item',
                     icon: 'feather icon-user-check',
-                    url: '/Recovered/Recovered'
+                    url: '/verifiedvendors/verifiedvendors'
                 },
             ]
         },
@@ -280,10 +280,10 @@ export default {
                     title: 'Authentication',
                     type: 'collapse',
                     icon: 'feather icon-lock',
-                    badge: {
-                        title: 'New',
-                        type: 'label-danger'
-                    },
+                    // badge: {
+                    //     title: 'New',
+                    //     type: 'label-danger'
+                    // },
                     children: [
                         {
                             id: 'signup-1',

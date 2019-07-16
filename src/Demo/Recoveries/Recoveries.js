@@ -8,21 +8,13 @@ import DEMO from "../../store/constant";
 import avatar1 from '../../assets/images/user/avatar-1.jpg';
 import avatar2 from '../../assets/images/user/avatar-2.jpg';
 import avatar3 from '../../assets/images/user/avatar-3.jpg';
+import RecoveryModal from './RecoveryModal';
 
 class Recoveries extends Component {
     render() {
         const btnstyle1 = {
             borderRadius: '15px',
           }
-
-          const nameTag = {
-              backgroundColor: "cadetblue",
-              padding: "8px",
-              borderRadius: "50%",
-              color: "#fff",
-              verticalAlign: "middle"
-          }
-
 
         const tabContent1 = (
             <Aux>
@@ -37,7 +29,7 @@ class Recoveries extends Component {
                         <td>
                             <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>11 JUL 12:56</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1}>Claim</a></td>
+                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><RecoveryModal/></td>
                     </tr>
                     <tr className="unread">
                         <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/></td>
@@ -48,7 +40,7 @@ class Recoveries extends Component {
                         <td>
                             <h6 className="text-muted"><i className="fa fa-circle text-c-red f-10 m-r-15"/>11 JUL 10:35</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1}>Claim</a></td>
+                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><RecoveryModal/></td>
                     </tr>
                     <tr className="unread">
                         <td><img className="rounded-circle" style={{width: '40px'}} src={avatar3} alt="activity-user"/></td>
@@ -59,7 +51,7 @@ class Recoveries extends Component {
                         <td>
                             <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>9 JUL 17:38</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1}>Claim</a></td>
+                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><RecoveryModal/></td>
                     </tr>
                     <tr className="unread">
                         <td><img className="rounded-circle" style={{width: '40px'}} src={avatar1} alt="activity-user"/></td>
@@ -70,7 +62,7 @@ class Recoveries extends Component {
                         <td>
                             <h6 className="text-muted f-w-300"><i className="fa fa-circle text-c-red f-10 m-r-15"/>19 JUL 12:56</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1}>Claim</a></td>
+                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><RecoveryModal/></td>
                     </tr>
                     <tr className="unread">
                         <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/></td>
@@ -81,7 +73,7 @@ class Recoveries extends Component {
                         <td>
                             <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>21 JUL 12:56</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1}>Claim</a></td>
+                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12" style={btnstyle1}>Review</a><RecoveryModal/></td>
                     </tr>
                 </tbody>
             </Table>
@@ -93,7 +85,8 @@ class Recoveries extends Component {
                 <Table responsive hover>
                     <tbody>
                         <tr className="unread">
-                            <td><span className="rounded-circle" style={nameTag}>DA</span></td>
+                            {/* <td><span className="rounded-circle" style={nameTag}>DA</span></td> */}
+                            <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/></td>
                             <td>
                                 <h6 className="mb-1">Daniel Abayomi</h6>
                                 <p className="m-0">Receiver's number was unreachable...</p>
@@ -188,12 +181,12 @@ class Recoveries extends Component {
         return (
             <Aux>
                 <Row>
-                    <Col md={6} xl={12} className='m-b-30'>
-                        <Tabs defaultActiveKey="today" id="uncontrolled-tab-example">
-                            <Tab eventKey="today" title="Active Recoveries">
+                    <Col md={12} xl={12} className='m-b-30'>
+                        <Tabs defaultActiveKey="active" id="uncontrolled-tab-example">
+                            <Tab eventKey="active" title="Active Recoveries">
                                 {tabContent1}
                             </Tab>
-                            <Tab eventKey="week" title="Claimed Packages">
+                            <Tab eventKey="claimed" title="Claimed Packages">
                                 {tabContent2}
                             </Tab>
                             {/* <Tab eventKey="all" title="All">

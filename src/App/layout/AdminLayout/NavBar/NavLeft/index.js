@@ -35,8 +35,8 @@ class NavLeft extends Component {
                             </Dropdown.Toggle>
                             <ul>
                                 <Dropdown.Menu>
-                                    <li><a className="dropdown-item" href={DEMO.BLANK_LINK}>Pickup</a></li>
-                                    <li><a className="dropdown-item" href={DEMO.BLANK_LINK}>Deliveries</a></li>
+                                    <li><a className="dropdown-item" href={DEMO.BLANK_LINK}>Request Pool</a></li>
+                                    <li><a className="dropdown-item" href={DEMO.BLANK_LINK}>Delivery Pool</a></li>
                                     <li><a className="dropdown-item" href={DEMO.BLANK_LINK}>Recoveries</a></li>
                                 </Dropdown.Menu>
                             </ul>
