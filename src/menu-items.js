@@ -15,58 +15,58 @@ export default {
                 }
             ]
         },
-        // {
-        //     id: 'ui-element',
-        //     title: 'UI ELEMENT',
-        //     type: 'group',
-        //     icon: 'icon-ui',
-        //     children: [
-        //         {
-        //             id: 'basic',
-        //             title: 'Component',
-        //             type: 'collapse',
-        //             icon: 'feather icon-box',
-        //             children: [
-        //                 {
-        //                     id: 'button',
-        //                     title: 'Button',
-        //                     type: 'item',
-        //                     url: '/basic/button'
-        //                 },
-        //                 {
-        //                     id: 'badges',
-        //                     title: 'Badges',
-        //                     type: 'item',
-        //                     url: '/basic/badges'
-        //                 },
-        //                 {
-        //                     id: 'breadcrumb-pagination',
-        //                     title: 'Breadcrumb & Pagination',
-        //                     type: 'item',
-        //                     url: '/basic/breadcrumb-paging'
-        //                 },
-        //                 {
-        //                     id: 'collapse',
-        //                     title: 'Collapse',
-        //                     type: 'item',
-        //                     url: '/basic/collapse'
-        //                 },
-        //                 {
-        //                     id: 'tabs-pills',
-        //                     title: 'Tabs & Pills',
-        //                     type: 'item',
-        //                     url: '/basic/tabs-pills'
-        //                 },
-        //                 {
-        //                     id: 'typography',
-        //                     title: 'Typography',
-        //                     type: 'item',
-        //                     url: '/basic/typography'
-        //                 }
-        //             ]
-        //         }
-        //     ]
-        // },
+        {
+            id: 'ui-element',
+            title: 'UI ELEMENT',
+            type: 'group',
+            icon: 'icon-ui',
+            children: [
+                {
+                    id: 'basic',
+                    title: 'Component',
+                    type: 'collapse',
+                    icon: 'feather icon-box',
+                    children: [
+                        {
+                            id: 'button',
+                            title: 'Button',
+                            type: 'item',
+                            url: '/basic/button'
+                        },
+                        {
+                            id: 'badges',
+                            title: 'Badges',
+                            type: 'item',
+                            url: '/basic/badges'
+                        },
+                        {
+                            id: 'breadcrumb-pagination',
+                            title: 'Breadcrumb & Pagination',
+                            type: 'item',
+                            url: '/basic/breadcrumb-paging'
+                        },
+                        {
+                            id: 'collapse',
+                            title: 'Collapse',
+                            type: 'item',
+                            url: '/basic/collapse'
+                        },
+                        {
+                            id: 'tabs-pills',
+                            title: 'Tabs & Pills',
+                            type: 'item',
+                            url: '/basic/tabs-pills'
+                        },
+                        {
+                            id: 'typography',
+                            title: 'Typography',
+                            type: 'item',
+                            url: '/basic/typography'
+                        }
+                    ]
+                }
+            ]
+        },
         {
             id: 'senders Section',
             title: 'Senders Section',
@@ -103,30 +103,30 @@ export default {
                                 type: 'label-danger'
                             }
                         },
-                        // {
-                        //     id: 'breadcrumb-pagination',
-                        //     title: 'Breadcrumb & Pagination',
-                        //     type: 'item',
-                        //     url: '/basic/breadcrumb-paging'
-                        // },
-                        // {
-                        //     id: 'collapse',
-                        //     title: 'Collapse',
-                        //     type: 'item',
-                        //     url: '/basic/collapse'
-                        // },
-                        // {
-                        //     id: 'tabs-pills',
-                        //     title: 'Tabs & Pills',
-                        //     type: 'item',
-                        //     url: '/basic/tabs-pills'
-                        // },
-                        // {
-                        //     id: 'typography',
-                        //     title: 'Typography',
-                        //     type: 'item',
-                        //     url: '/basic/typography'
-                        // }
+                        {
+                            id: 'breadcrumb-pagination',
+                            title: 'Breadcrumb & Pagination',
+                            type: 'item',
+                            url: '/basic/breadcrumb-paging'
+                        },
+                        {
+                            id: 'collapse',
+                            title: 'Collapse',
+                            type: 'item',
+                            url: '/basic/collapse'
+                        },
+                        {
+                            id: 'tabs-pills',
+                            title: 'Tabs & Pills',
+                            type: 'item',
+                            url: '/basic/tabs-pills'
+                        },
+                        {
+                            id: 'typography',
+                            title: 'Typography',
+                            type: 'item',
+                            url: '/basic/typography'
+                        }
                     ]
                 },
                 {
@@ -145,28 +145,28 @@ export default {
                 }
             ]
         },
-        // {
-        //     id: 'ui-forms',
-        //     title: 'Forms & Tables',
-        //     type: 'group',
-        //     icon: 'icon-group',
-        //     children: [
-        //         {
-        //             id: 'form-basic',
-        //             title: 'Form Elements',
-        //             type: 'item',
-        //             url: '/forms/form-basic',
-        //             icon: 'feather icon-file-text'
-        //         },
-        //         {
-        //             id: 'bootstrap',
-        //             title: 'Table',
-        //             type: 'item',
-        //             icon: 'feather icon-server',
-        //             url: '/tables/bootstrap'
-        //         }
-        //     ]
-        // },
+        {
+            id: 'ui-forms',
+            title: 'Forms & Tables',
+            type: 'group',
+            icon: 'icon-group',
+            children: [
+                {
+                    id: 'form-basic',
+                    title: 'Form Elements',
+                    type: 'item',
+                    url: '/forms/form-basic',
+                    icon: 'feather icon-file-text'
+                },
+                {
+                    id: 'bootstrap',
+                    title: 'Table',
+                    type: 'item',
+                    icon: 'feather icon-server',
+                    url: '/tables/bootstrap'
+                }
+            ]
+        },
         {
             id: 'vendors-section',
             title: 'Vendors Section',

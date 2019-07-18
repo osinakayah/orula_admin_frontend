@@ -1,7 +1,7 @@
 //ModalComponent.js
 import React from 'react';
-import {Card} from 'react-bootstrap';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Badge } from 'reactstrap';
+import {Card, Badge} from 'react-bootstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import Aux from "../../hoc/_Aux";
 class ModalComponent extends React.Component {
 
@@ -22,7 +22,7 @@ class ModalComponent extends React.Component {
     return (
 
         <Aux>
-        <Badge variant="warning" size="sm" onClick={this.toggle}>View</Badge>
+        <Badge variant="primary" size="sm" onClick={this.toggle}>View</Badge>
         <Modal isOpen={this.state.modal} size="lg">
         <form onSubmit={this.handleSubmit}>
           <ModalHeader>Delivery Details</ModalHeader>
