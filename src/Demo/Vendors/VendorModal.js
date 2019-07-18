@@ -123,7 +123,7 @@ class VendorModal extends React.Component {
                     </Card.Header>
                     <Card.Body>
                         <Row>
-                        <Col md={6}>
+                            <Col md={6}>
                                 <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Vehicle Info</h6>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
@@ -151,6 +151,40 @@ class VendorModal extends React.Component {
 
                                     <div className="col-8 text-left">
                                         <button type="button" className="btn btn-warning btn-sm">View Docs</button>
+                                    </div>
+                                </div>
+                                <div className="progress m-t-30" style={{height: '3px'}}>
+                                    <div className="progress-bar progress-c-theme" role="progressbar" style={{width: '100%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"/>
+                                </div>
+                            </Col>
+                            <Col md={6}>
+                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Additional Info</h6>
+                                <div className="row d-flex align-items-center">
+                                    <div className="col-4 text-right">
+                                        <h6 className="f-w-300 m-b-0">Vehicle Type:</h6>
+                                    </div>
+
+                                    <div className="col-8 text-left">
+                                        <p className="m-b-0">Toyota Camry '08</p>
+                                    </div>
+                                </div>
+                                <div className="row d-flex align-items-center">
+                                    <div className="col-4 text-right">
+                                        <h6 className="f-w-300 m-b-0">Car Plate:</h6>
+                                    </div>
+
+                                    <div className="col-8 text-left">
+                                        <p className="m-b-0">ABJ001SMK</p>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div className="row d-flex align-items-center">
+                                    <div className="col-4 text-right">
+                                        <h6 className="f-w-300 m-b-0">Car Plate:</h6>
+                                    </div>
+
+                                    <div className="col-8 text-left">
+                                        <p className="m-b-0">ABJ001SMK</p>
                                     </div>
                                 </div>
                                 <div className="progress m-t-30" style={{height: '3px'}}>

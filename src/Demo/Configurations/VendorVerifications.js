@@ -17,11 +17,10 @@ class VendorVerifications extends Component {
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Sender</th>
-                                    <th>Amount</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
                                     <th>Date</th>
-                                    <th>Product</th>
-                                    <th>Vendor</th>
+                                    <th>Vehicle Type</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -30,30 +29,27 @@ class VendorVerifications extends Component {
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Cynthia Ezechukwu</td>
-                                    <td>&#8358;1500</td>
+                                    <td>Abuja</td>
                                     <td>27/07/19 12:03pm</td>
-                                    <td>Standard</td>
-                                    <td>Daniel Abayomi</td>
+                                    <td>Car</td>
                                     <td><Badge variant="warning">Running</Badge></td>
                                     <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Cynthia Ezechukwu</td>
-                                    <td>&#8358;1500</td>
-                                    <td>27/07/19 10:33am</td>
-                                    <td>Scheduled</td>
                                     <td>Daniel Abayomi</td>
+                                    <td>Lagos</td>
+                                    <td>27/07/19 10:33am</td>
+                                    <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
                                     <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>Cynthia Ezechukwu</td>
-                                    <td>&#8358;1500</td>
+                                    <td>Ifeanyi Osinakayah</td>
+                                    <td>Abuja</td>
                                     <td>27/07/19 13:25pm</td>
-                                    <td>Instant</td>
-                                    <td>Daniel Abayomi</td>
+                                    <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
                                     <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
                                 </tr>

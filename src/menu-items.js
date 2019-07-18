@@ -210,13 +210,6 @@ export default {
                     
                 },
                 {
-                    id: 'recovered',
-                    title: 'Recovered',
-                    type: 'item',
-                    icon: 'feather icon-bookmark',
-                    url: '/Recovered/Recovered'
-                },
-                {
                     id: 'verified-vendors',
                     title: 'Verified Vendors',
                     type: 'item',

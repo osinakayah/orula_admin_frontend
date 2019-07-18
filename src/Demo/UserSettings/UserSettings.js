@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Form, FormControl, Button} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
@@ -11,12 +11,27 @@ class UserSettings extends Component {
                 <Row>
                     <Col>
                         <Card title='Update Settings' isOption>
-                            <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                            </p>
+                            <Row>
+                                <Col md={6}>
+                                    <h6 className='mb-4'><i className="feather icon-lock text-c-green f-20 m-r-5"/> Change Password</h6>
+                                    <Form>
+                                        <Form.Group controlId="formBasicPassword">
+                                            <Form.Label>Password</Form.Label>
+                                            <FormControl type="password" placeholder="Password" />
+                                        </Form.Group>
+                                        <Form.Group controlId="formBasicPassword">
+                                            <Form.Label>Confirm Password</Form.Label>
+                                            <FormControl type="password" placeholder="ConfirmPassword" />
+                                            <Form.Text className="text-muted text-c-red">
+                                                Password didn't match the first one
+                                            </Form.Text>
+                                        </Form.Group>
+                                        <Button variant="primary">
+                                            Submit
+                                        </Button>
+                                    </Form>
+                                </Col>
+                            </Row>
                         </Card>
                     </Col>
                 </Row>

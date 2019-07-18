@@ -105,7 +105,7 @@ class Recoveries extends Component {
                             <td>
                                 <h6 className="text-muted"><i className="fa fa-circle text-c-red f-10 m-r-15"/>11 JUL 10:35</h6>
                             </td>
-                            <td><Badge variant="success"><i className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge></td>
+                            <td><Badge variant="success m-r-15"><i className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><Badge variant="warning">Details</Badge></td>
                         </tr>
                         <tr className="unread">
                             <td><img className="rounded-circle" style={{width: '40px'}} src={avatar3} alt="activity-user"/></td>

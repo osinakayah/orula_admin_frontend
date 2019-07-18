@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table} from 'react-bootstrap';
+import {Row, Col, Table, Badge} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
@@ -20,6 +20,7 @@ class VerifiedVendors extends Component {
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Branch</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -30,6 +31,7 @@ class VerifiedVendors extends Component {
                                     <td>customer@orula.com</td>
                                     <td>09031822660</td>
                                     <td>Abuja</td>
+                                    <td><Badge variant="success">Verified</Badge></td>
                                     <td><VendorModal/></td>
                                 </tr>
                                 <tr>
@@ -38,6 +40,7 @@ class VerifiedVendors extends Component {
                                     <td>customer@orula.com</td>
                                     <td>09031822660</td>
                                     <td>Lagos</td>
+                                    <td><Badge variant="success">Verified</Badge></td>
                                     <td><VendorModal/></td>
                                 </tr>
                                 <tr>
@@ -46,6 +49,7 @@ class VerifiedVendors extends Component {
                                     <td>customer@orula.com</td>
                                     <td>09031822660</td>
                                     <td>Abuja</td>
+                                    <td><Badge variant="success">Verified</Badge></td>
                                     <td><VendorModal/></td>
                                 </tr>
                                 </tbody>

@@ -35,7 +35,6 @@ const VerifiedSenders = React.lazy(() => import('./Demo/VerifiedSenders/Verified
 const VerifiedVendors = React.lazy(() => import('./Demo/Vendors/VerifiedVendors'));
 const WithdrawRequests = React.lazy(() => import('./Demo/Disbursements/WIthdrawReq/WithdrawRequests'));
 const Disbursed = React.lazy(() => import('./Demo/Disbursements/Disbursed/Disbursed'));
-const Recovered = React.lazy(() => import('./Demo/Recovered/Recovered'));
 const VendorVerifications = React.lazy(() => import('./Demo/Configurations/VendorVerifications'));
 const UserSettings = React.lazy(() => import('./Demo/UserSettings/UserSettings'));
 
@@ -63,7 +62,6 @@ const routes = [
     { path: '/verifiedvendors/verifiedvendors', exact: true, name: 'VerifiedVendors', component: VerifiedVendors },
     { path: '/Disbursements/WIthdrawReq/WithdrawRequests', exact: true, name: 'WithdrawRequests', component: WithdrawRequests },
     { path: '/Disbursements/Disbursed/Disbursed', exact: true, name: 'Disbursed', component: Disbursed },
-    { path: '/Recovered/Recovered', exact: true, name: 'Recovered', component: Recovered },
     { path: '/Configurations/VendorVerifications', exact: true, name: 'VendorVerifications', component: VendorVerifications },
     { path: '/UserSettings/UserSettings', exact: true, name: 'UserSettings', component: UserSettings },
 
