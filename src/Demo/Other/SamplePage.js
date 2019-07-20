@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
-import Card from "../../App/components/MainCard";
+import Card from "../../Components/MainCard";
 
 class SamplePage extends Component {
     render() {

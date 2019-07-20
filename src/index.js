@@ -4,7 +4,8 @@ import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import App from './App/index';
+// import App from './App/index';
+import App from './Pages/RootPage'
 import * as serviceWorker from './serviceWorker';
 import config from './config';
 

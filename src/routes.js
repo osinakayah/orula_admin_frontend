@@ -5,7 +5,7 @@ window.jQuery = $;
 window.$ = $;
 global.jQuery = $;
 
-const DashboardDefault = React.lazy(() => import('./Demo/Dashboard/Default'));
+const DashboardDefault = React.lazy(() => import('./Pages/Dashboard/Default'));
 
 const UIBasicButton = React.lazy(() => import('./Demo/UIElements/Basic/Button'));
 const UIBasicBadges = React.lazy(() => import('./Demo/UIElements/Basic/Badges'));
@@ -27,16 +27,16 @@ const OtherSamplePage = React.lazy(() => import('./Demo/Other/SamplePage'));
 const OtherDocs = React.lazy(() => import('./Demo/Other/Docs'));
 
 // All pages routes
-const RequestPool = React.lazy(() => import('./Demo/Applications/RequestPool/RequestPool'));
-const DeliveryPool = React.lazy(() => import('./Demo/Applications/DeliveryPool/DeliveryPool'));
-const ConfirmedDeliveries = React.lazy(() => import('./Demo/ConfirmedDeliveries/ConfirmedDeliveries'));
-const Recoveries = React.lazy(() => import('./Demo/Recoveries/Recoveries'));
-const VerifiedSenders = React.lazy(() => import('./Demo/VerifiedSenders/VerifiedSenders'));
-const VerifiedDispatchers = React.lazy(() => import('./Demo/Dispatchers/VerifiedDispatchers'));
-const WithdrawRequests = React.lazy(() => import('./Demo/Disbursements/WIthdrawReq/WithdrawRequests'));
-const Disbursed = React.lazy(() => import('./Demo/Disbursements/Disbursed/Disbursed'));
-const DispatcherVerifications = React.lazy(() => import('./Demo/Configurations/DispatcherVerifications'));
-const UserSettings = React.lazy(() => import('./Demo/UserSettings/UserSettings'));
+const RequestPool = React.lazy(() => import('./Pages/Applications/RequestPool/RequestPool'));
+const DeliveryPool = React.lazy(() => import('./Pages/Applications/DeliveryPool/DeliveryPool'));
+const ConfirmedDeliveries = React.lazy(() => import('./Pages/ConfirmedDeliveries/ConfirmedDeliveries'));
+const Recoveries = React.lazy(() => import('./Pages/Recoveries/Recoveries'));
+const VerifiedSenders = React.lazy(() => import('./Pages/VerifiedSenders/VerifiedSenders'));
+const VerifiedDispatchers = React.lazy(() => import('./Pages/Dispatchers/VerifiedDispatchers'));
+const WithdrawRequests = React.lazy(() => import('./Pages/Disbursements/WIthdrawReq/WithdrawRequests'));
+const Disbursed = React.lazy(() => import('./Pages/Disbursements/Disbursed/Disbursed'));
+const DispatcherVerifications = React.lazy(() => import('./Pages/Configurations/DispatcherVerifications'));
+const UserSettings = React.lazy(() => import('./Pages/UserSettings/UserSettings'));
 
 
 const routes = [
