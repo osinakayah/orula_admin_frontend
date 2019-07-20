@@ -3,15 +3,15 @@ import {Row, Col, Table, Badge} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
-import VendorModal from "./VendorModal";
+import DispatchersModal from "./DispatchersModal";
 
-class VerifiedVendors extends Component {
+class VerifiedDispatchers extends Component {
     render() {
         return (
             <Aux>
                 <Row>
                     <Col>
-                        <Card title='Verified Vendors' anotherOption>
+                        <Card title='Verified Dispatchers' anotherOption>
                             <Table striped responsive>
                                 <thead>
                                 <tr>
@@ -32,7 +32,7 @@ class VerifiedVendors extends Component {
                                     <td>09031822660</td>
                                     <td>Abuja</td>
                                     <td><Badge variant="success">Verified</Badge></td>
-                                    <td><VendorModal/></td>
+                                    <td><DispatchersModal/></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -41,7 +41,7 @@ class VerifiedVendors extends Component {
                                     <td>09031822660</td>
                                     <td>Lagos</td>
                                     <td><Badge variant="success">Verified</Badge></td>
-                                    <td><VendorModal/></td>
+                                    <td><DispatchersModal/></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
@@ -50,7 +50,7 @@ class VerifiedVendors extends Component {
                                     <td>09031822660</td>
                                     <td>Abuja</td>
                                     <td><Badge variant="success">Verified</Badge></td>
-                                    <td><VendorModal/></td>
+                                    <td><DispatchersModal/></td>
                                 </tr>
                                 </tbody>
                             </Table>
@@ -62,4 +62,4 @@ class VerifiedVendors extends Component {
     }
 }
 
-export default VerifiedVendors;
+export default VerifiedDispatchers;

@@ -111,7 +111,7 @@ class ModalComponent extends React.Component {
               <div className="col-md-6">
               <Card>
                   <Card.Body>
-                      <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Vendor's Info</h6>
+                      <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Dispatcher's Info</h6>
                       <div className="row d-flex align-items-center">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Name:</h6>
@@ -173,7 +173,7 @@ class ModalComponent extends React.Component {
                         </div>
                       </div>
                       <div className="text-center" style={{marginTop: "20px"}}>
-                        <button type="button" className="btn btn-warning btn-sm">Track Vendor</button>
+                        <button type="button" className="btn btn-warning btn-sm">Track Dispatcher</button>
                       </div>
 
                       <div className="progress m-t-30" style={{height: '3px'}}>

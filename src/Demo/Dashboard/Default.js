@@ -305,7 +305,7 @@ class Dashboard extends React.Component {
                                     </div>
                                     <div className="col">
                                         <h3 className="f-w-300">200</h3>
-                                        <span className="d-block text-uppercase">total Vendors</span>
+                                        <span className="d-block text-uppercase">total Dispatchers</span>
                                     </div>
                                 </div>
                             </Card.Body>

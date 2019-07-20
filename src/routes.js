@@ -32,10 +32,10 @@ const DeliveryPool = React.lazy(() => import('./Demo/Applications/DeliveryPool/D
 const ConfirmedDeliveries = React.lazy(() => import('./Demo/ConfirmedDeliveries/ConfirmedDeliveries'));
 const Recoveries = React.lazy(() => import('./Demo/Recoveries/Recoveries'));
 const VerifiedSenders = React.lazy(() => import('./Demo/VerifiedSenders/VerifiedSenders'));
-const VerifiedVendors = React.lazy(() => import('./Demo/Vendors/VerifiedVendors'));
+const VerifiedDispatchers = React.lazy(() => import('./Demo/Dispatchers/VerifiedDispatchers'));
 const WithdrawRequests = React.lazy(() => import('./Demo/Disbursements/WIthdrawReq/WithdrawRequests'));
 const Disbursed = React.lazy(() => import('./Demo/Disbursements/Disbursed/Disbursed'));
-const VendorVerifications = React.lazy(() => import('./Demo/Configurations/VendorVerifications'));
+const DispatcherVerifications = React.lazy(() => import('./Demo/Configurations/DispatcherVerifications'));
 const UserSettings = React.lazy(() => import('./Demo/UserSettings/UserSettings'));
 
 
@@ -59,10 +59,10 @@ const routes = [
     { path: '/confirmeddeliveries/confirmed-deliveries', exact: true, name: 'Confirmed Deliveries', component: ConfirmedDeliveries },
     { path: '/recoveries/recoveries', exact: true, name: 'Recoveries', component: Recoveries },
     { path: '/verifiedsenders/verifiedsenders', exact: true, name: 'VerifiedSenders', component: VerifiedSenders },
-    { path: '/verifiedvendors/verifiedvendors', exact: true, name: 'VerifiedVendors', component: VerifiedVendors },
+    { path: '/verifiedDispatchers/verifiedDispatchers', exact: true, name: 'VerifiedDispatchers', component: VerifiedDispatchers },
     { path: '/Disbursements/WIthdrawReq/WithdrawRequests', exact: true, name: 'WithdrawRequests', component: WithdrawRequests },
     { path: '/Disbursements/Disbursed/Disbursed', exact: true, name: 'Disbursed', component: Disbursed },
-    { path: '/Configurations/VendorVerifications', exact: true, name: 'VendorVerifications', component: VendorVerifications },
+    { path: '/Configurations/DispatcherVerifications', exact: true, name: 'DispatcherVerifications', component: DispatcherVerifications },
     { path: '/UserSettings/UserSettings', exact: true, name: 'UserSettings', component: UserSettings },
 
     

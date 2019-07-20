@@ -4,15 +4,15 @@ import {Row, Col, Table, Badge} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 import Card from "../../App/components/MainCard";
 import DEMO from "../../store/constant";
-import VendorVerfModal from './VendorVerfModal';
+import DispatcherVerfModal from './DispatcherVerfModal';
 
-class VendorVerifications extends Component {
+class DispatcherVerifications extends Component {
     render() {
         return (
             <Aux>
                 <Row>
                     <Col>
-                        <Card title='Verify A Vendor' isOption>
+                        <Card title='Verify A Dispatcher' isOption>
                             <Table striped responsive>
                                 <thead>
                                 <tr>
@@ -33,7 +33,7 @@ class VendorVerifications extends Component {
                                     <td>27/07/19 12:03pm</td>
                                     <td>Car</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -42,7 +42,7 @@ class VendorVerifications extends Component {
                                     <td>27/07/19 10:33am</td>
                                     <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
@@ -51,7 +51,7 @@ class VendorVerifications extends Component {
                                     <td>27/07/19 13:25pm</td>
                                     <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><VendorVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
                                 </tr>
                                 </tbody>
                             </Table>
@@ -63,4 +63,4 @@ class VendorVerifications extends Component {
     }
 }
 
-export default VendorVerifications;
+export default DispatcherVerifications;

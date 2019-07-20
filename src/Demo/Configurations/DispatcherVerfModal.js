@@ -1,10 +1,10 @@
-//VendorVerfModal.js
+//DispatcherVerfModal.js
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import {Row, Col, Card, Badge, Form, FormControl} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 
-class VendorVerfModal extends React.Component {
+class DispatcherVerfModal extends React.Component {
 
     state = {
          modal: false};
@@ -31,18 +31,18 @@ class VendorVerfModal extends React.Component {
         {/* <a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1} onClick={this.toggle}>Claim</a> */}
         <Modal isOpen={this.state.modal} size="lg">
         <Form onSubmit={this.handleSubmit}>
-          <ModalHeader>Verify A Vendor</ModalHeader>
+          <ModalHeader>Verify A Dispatcher</ModalHeader>
           <ModalBody>
           <Row>
               <Col>
                   <Card>
                     <Card.Header>
-                        <Card.Title as="h5">Vendor Details</Card.Title>
+                        <Card.Title as="h5">Dispatcher Details</Card.Title>
                     </Card.Header>
                     <Card.Body>
                         <Row>
                         <Col md={6}>
-                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Vendor's Info</h6>
+                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Dispatcher's Info</h6>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
                                         <h6 className="f-w-300 m-b-0">Name:</h6>
@@ -64,7 +64,7 @@ class VendorVerfModal extends React.Component {
                                 <hr/>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
-                                        <h6 className="f-w-300 m-b-0">Vendor's Address:</h6>
+                                        <h6 className="f-w-300 m-b-0">Dispatcher's Address:</h6>
                                     </div>
 
                                     <div className="col-8 text-left">
@@ -170,4 +170,4 @@ class VendorVerfModal extends React.Component {
   }
 }
 
-export default VendorVerfModal;
+export default DispatcherVerfModal;

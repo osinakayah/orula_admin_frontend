@@ -1,11 +1,11 @@
-//RecoveryModal.js
+//DispatchersModal.js
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import {Row, Col, Card, Badge} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 import DEMO from "../../store/constant";
 
-class VendorModal extends React.Component {
+class DispatchersModal extends React.Component {
 
     state = {
          modal: false};
@@ -28,18 +28,18 @@ class VendorModal extends React.Component {
         <a href={DEMO.BLANK_LINK}><Badge variant="warning" size="sm" onClick={this.toggle}>View</Badge></a>
         {/* <a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1} onClick={this.toggle}>Claim</a> */}
         <Modal isOpen={this.state.modal} size="lg">
-          <ModalHeader>Vendor's Detail</ModalHeader>
+          <ModalHeader>Dispatcher's Detail</ModalHeader>
           <ModalBody>
           <Row>
               <Col>
                   <Card>
                     <Card.Header>
-                        <Card.Title as="h5">Vendor's Information</Card.Title>
+                        <Card.Title as="h5">Dispatcher's Information</Card.Title>
                     </Card.Header>
                     <Card.Body>
                         <Row>
                         <Col md={6}>
-                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Vendor's Info</h6>
+                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Dispatcher's Info</h6>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
                                         <h6 className="f-w-300 m-b-0">Name:</h6>
@@ -64,7 +64,7 @@ class VendorModal extends React.Component {
                                     </div>
 
                                     <div className="col-8 text-left">
-                                        <p className="m-b-0">vendor@orula.com.ng</p>
+                                        <p className="m-b-0">Dispatcher@orula.com.ng</p>
                                     </div>
                                 </div>
                                 <div className="row d-flex align-items-center">
@@ -207,4 +207,4 @@ class VendorModal extends React.Component {
   }
 }
 
-export default VendorModal;
+export default DispatchersModal;

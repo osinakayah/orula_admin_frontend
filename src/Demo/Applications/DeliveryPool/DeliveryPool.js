@@ -21,7 +21,7 @@ class DeliveryPool extends Component {
                                     <th>Amount</th>
                                     <th>Date</th>
                                     <th>Product</th>
-                                    <th>Vendor</th>
+                                    <th>Dispatcher</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>

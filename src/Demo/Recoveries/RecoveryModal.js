@@ -43,7 +43,7 @@ class RecoveryModal extends React.Component {
                     <Card.Body>
                         <Row>
                         <Col md={6}>
-                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Vendor's Info</h6>
+                                <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Dispatcher's Info</h6>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
                                         <h6 className="f-w-300 m-b-0">Name:</h6>
@@ -65,7 +65,7 @@ class RecoveryModal extends React.Component {
                                 <hr/>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-4 text-right">
-                                        <h6 className="f-w-300 m-b-0">Vendor's Remark:</h6>
+                                        <h6 className="f-w-300 m-b-0">Dispatcher's Remark:</h6>
                                     </div>
 
                                     <div className="col-8 text-left">

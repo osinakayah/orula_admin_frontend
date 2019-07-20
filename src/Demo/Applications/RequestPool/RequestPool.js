@@ -20,7 +20,7 @@ class RequestPool extends Component {
                                         <th>Sender</th>
                                         <th>Amount</th>
                                         <th>Date</th>
-                                        <th>Vendor</th>
+                                        <th>Dispatcher</th>
                                         <th>Status</th>
                                         <th>View</th>
                                     </tr>
