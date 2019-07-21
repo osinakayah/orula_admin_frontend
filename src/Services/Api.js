@@ -15,7 +15,13 @@ const create = (baseURL = '') => {
         baseURL,
     })
 
-    return {}
+    const postLogin = (email, password) => {
+
+    }
+
+    return {
+        postLogin
+    }
 }
 
 // let's return back our create method as the default.
