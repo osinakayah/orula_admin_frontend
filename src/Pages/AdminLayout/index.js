@@ -11,6 +11,7 @@ import Loader from "../../Components/Loader";
 import routes from '../../routes'
 import Aux from "../../hoc/_Aux";
 import NavigationActions from '../../Redux/NavigationRedux'
+import PrivateRoute from '../PrivateRoute'
 
 import './app.scss';
 
@@ -44,14 +45,21 @@ class AdminLayout extends Component {
 
         const menu = routes.map((route, index) => {
             return (route.component) ? (
-                <Route
+                <PrivateRoute
                     key={index}
                     path={route.path}
                     exact={route.exact}
                     name={route.name}
-                    render={props => (
-                        <route.component {...props} />
-                    )} />
+                    component={route.component}
+                />
+                // <Route
+                //     key={index}
+                //     path={route.path}
+                //     exact={route.exact}
+                //     name={route.name}
+                //     render={props => (
+                //         <route.component {...props} />
+                //     )} />
             ) : (null);
         });
 
