@@ -4,8 +4,8 @@ import rootSaga from '../Sagas';
 
 export default () => {
     const rootReducer = combineReducers({
-        // products: require('./ProductsRedux').reducer,
-        nav: require('./NavigationRedux').reducer
+        nav: require('./NavigationRedux').reducer,
+        login: require('./LoginRedux').reducer
     })
 
     return configureSore(rootReducer, rootSaga);
