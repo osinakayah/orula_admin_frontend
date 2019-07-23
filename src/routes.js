@@ -32,6 +32,7 @@ const DeliveryPool = React.lazy(() => import('./Pages/Applications/DeliveryPool/
 const ConfirmedDeliveries = React.lazy(() => import('./Pages/ConfirmedDeliveries/ConfirmedDeliveries'));
 const Recoveries = React.lazy(() => import('./Pages/Recoveries/Recoveries'));
 const VerifiedSenders = React.lazy(() => import('./Pages/VerifiedSenders/VerifiedSenders'));
+const UnverifiedSenders = React.lazy(() => import('./Pages/VerifiedSenders/UnverifiedSenders'));
 const VerifiedDispatchers = React.lazy(() => import('./Pages/Dispatchers/VerifiedDispatchers'));
 const WithdrawRequests = React.lazy(() => import('./Pages/Disbursements/WIthdrawReq/WithdrawRequests'));
 const Disbursed = React.lazy(() => import('./Pages/Disbursements/Disbursed/Disbursed'));
@@ -59,6 +60,7 @@ const routes = [
     { path: '/confirmeddeliveries/confirmed-deliveries', exact: true, name: 'Confirmed Deliveries', component: ConfirmedDeliveries },
     { path: '/recoveries/recoveries', exact: true, name: 'Recoveries', component: Recoveries },
     { path: '/verifiedsenders/verifiedsenders', exact: true, name: 'VerifiedSenders', component: VerifiedSenders },
+    { path: '/unverifiedsenders/unverifiedsenders', exact: true, name: 'UnverifiedSenders', component: UnverifiedSenders },
     { path: '/verifiedDispatchers/verifiedDispatchers', exact: true, name: 'VerifiedDispatchers', component: VerifiedDispatchers },
     { path: '/Disbursements/WIthdrawReq/WithdrawRequests', exact: true, name: 'WithdrawRequests', component: WithdrawRequests },
     { path: '/Disbursements/Disbursed/Disbursed', exact: true, name: 'Disbursed', component: Disbursed },
