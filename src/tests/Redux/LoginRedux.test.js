@@ -1,7 +1,7 @@
 import Actions, { reducer, INITIAL_STATE } from '../../Redux/LoginRedux'
 
 
-test('Login Request', function () {
+it('Login Request', function () {
     const email = 'john@doe.com'
     const password =  'secret';
 
@@ -14,7 +14,7 @@ test('Login Request', function () {
 
 });
 
-test('Login Success', function () {
+it('Login Success', function () {
     const payload = {
         id: 1,
         fullname: "John Doe",
@@ -30,7 +30,7 @@ test('Login Success', function () {
     expect(state.error).toBeNull()
 })
 
-test('Login Error', function () {
+it('Login Error', function () {
     const error = 'You need to sign in or sign up before continuing.';
     const state = reducer(INITIAL_STATE, Actions.loginFailure(error))
     expect(state.fetching).toBe(false)

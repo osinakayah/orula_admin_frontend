@@ -19,8 +19,13 @@ const create = (baseURL = '') => {
 
     }
 
+    const getFetchingDeliveries = () => {
+
+    }
+
     return {
-        postLogin
+        postLogin,
+        getFetchingDeliveries
     }
 }
 

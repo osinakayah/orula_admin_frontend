@@ -1,16 +1,21 @@
 import LoginActions from '../Redux/LoginRedux'
 import { call, put } from 'redux-saga/effects'
 import {ToastsStore} from "react-toasts";
+import {reactLocalStorage} from 'reactjs-localstorage';
+import config from '../config';
+
 export  function *postLoginSaga(api, action) {
     const { data } = action;
 
-    const reponse = yield call(api.postLogin, data);
+    const response = yield call(api.postLogin, data);
 
-    if (reponse.ok) {
-        yield put(LoginActions.loginSuccess(reponse.data))
+    if (response.ok) {
+        reactLocalStorage.set(config.authTokenLocalStorage, 'testAuthToken');
+        yield put(LoginActions.loginSuccess(response.data))
+        window.location = '/'
     }
     else {
-        ToastsStore.error(reponse.data.error);
-        yield put(LoginActions.loginFailure(reponse.data.error))
+        ToastsStore.error(response.data.error);
+        yield put(LoginActions.loginFailure(response.data.error))
     }
 }

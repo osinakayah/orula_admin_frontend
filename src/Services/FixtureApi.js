@@ -22,5 +22,19 @@ export default {
         }
 
     },
+    getFetchingDeliveries: ({page, type}) => {
+        if (page > 0 ) {
+            return {
+                ok: true,
+                data: []
+            }
+        }
+        return {
+            ok: false,
+            data: {
+                error: "Something went wrong"
+            }
+        }
+    }
 
 }

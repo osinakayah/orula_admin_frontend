@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-
+import {reactLocalStorage} from 'reactjs-localstorage';
 import {
     Route,
     Redirect,
     withRouter
 } from 'react-router-dom'
+import config from '../config';
 
 class PrivateRoute extends Component {
 
@@ -20,7 +21,12 @@ class PrivateRoute extends Component {
     }
 
     isAuthenticated = () => {
+        const authToken = reactLocalStorage.get(config.authTokenLocalStorage);
+        if (authToken) {
+            return true
+        }
         return false;
+
     }
 }
 
