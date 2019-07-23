@@ -19,7 +19,7 @@ class MainCard extends Component {
         this.setState({loadCard: true});
         setInterval(() => {
             this.setState({loadCard: false});
-        }, 3000);
+        }, 6000);
     };
 
     cardRemoveHandler = () => {

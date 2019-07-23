@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import { connect }            from 'react-redux';
 import PropTypes      from 'prop-types';
 import '../../../assets/scss/style.scss';
-import '../../../../node_modules/sweetalert/dist/sweetalert.css'
+import '../../../../node_modules/sweetalert/dist/sweetalert.css';
 import Aux from "../../../hoc/_Aux";
 import Breadcrumb from "../../../Components/Breadcrumb";
 import LoginActions from '../../../Redux/LoginRedux'
