@@ -5,7 +5,8 @@ import NavLeft from "./NavLeft";
 import NavRight from "./NavRight";
 import Aux from "../../hoc/_Aux";
 import DEMO from "../../store/constant";
-import * as actionTypes from "../../store/actions";
+
+import NavigationActions from '../../Redux/NavigationRedux'
 
 class NavBar extends Component {
     render() {
@@ -53,7 +54,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onToggleNavigation: () => dispatch({type: actionTypes.COLLAPSE_MENU}),
+        onToggleNavigation: () => dispatch(NavigationActions.collapseMenu()),
     }
 };
 
