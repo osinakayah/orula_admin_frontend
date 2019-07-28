@@ -3,9 +3,11 @@ import { call, put } from 'redux-saga/effects'
 import {ToastsStore} from "react-toasts";
 
 export  function *getFetchingDeliverySaga(api, action) {
-    const { data } = action;
 
-    const response = yield call(api.getFetchingDeliveries, data);
+    const { deliveriesData } = action;
+
+
+    const response = yield call(api.getFetchingDeliveries, deliveriesData);
 
     if (response.ok) {
         yield put(DeliveryActions.fetchingDeliveriesSuccess(response.data))

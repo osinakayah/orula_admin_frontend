@@ -8,8 +8,6 @@ it('Login Request', function () {
     const state = reducer(INITIAL_STATE, Actions.loginRequest({email, password}))
 
     expect(state.fetching).toBe(true)
-    expect(state.data.email).toBe(email)
-    expect(state.data.password).toBe(password)
     expect(state.error).toBeNull()
 
 });

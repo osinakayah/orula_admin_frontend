@@ -22,15 +22,15 @@ it("succcess Delivery", function () {
 
 it("error Delivery", function () {
     const page = -1
-    const type =  1
-    const data = {
+    const status =  1
+    const deliveriesData = {
         page,
-        type
+        status
     }
     const error = {
         error: "Something went wrong"
     };
-    return expectSaga(getFetchingDeliverySaga, FixtureAPI, {data})
+    return expectSaga(getFetchingDeliverySaga, FixtureAPI, {deliveriesData})
         .put(DeliveryActions.fetchingDeliveriesFailure(error.error))
         .run();
 });

@@ -15,7 +15,6 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-    data: null,
     payload: null,
     error: null,
     fetching: false
@@ -29,8 +28,8 @@ export const LoginSelectors = {
 
 /* ------------- Reducers ------------- */
 
-export const loginRequest = (state, {data}) => {
-    return state.merge({data, fetching: true, payload:null, error: null})
+export const loginRequest = (state) => {
+    return state.merge({fetching: true, payload:null, error: null})
 }
 export const loginSuccess = (state, {payload}) => {
     return state.merge({payload, fetching: false, error: null})

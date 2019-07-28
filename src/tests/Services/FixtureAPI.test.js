@@ -18,6 +18,9 @@ it('FixtureAPI postLogin returns the right file for success login', () => {
     const password =  'secret';
     expect(FixtureAPI.postLogin({email, password})).toEqual({
         ok: true,
+        headers:{
+            authorization: "testHeader"
+        },
         data: expectedFile
     })
 })
@@ -31,3 +34,14 @@ it('FixtureAPI postLogin returns the right file for error login', () => {
         data: expectedFile
     })
 })
+
+it('FixtureAPI getFetchingDeliveries returns the right file ', () => {
+    const expectedFile = require('../../Fixtures/deliveries.json');
+
+    expect(FixtureAPI.getFetchingDeliveries({page: 1, status: 1})).toEqual({
+        ok: true,
+        data: expectedFile
+    })
+})
+
+

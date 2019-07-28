@@ -1,22 +1,81 @@
 import React, {Component} from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Row, Col, Table, Badge} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
+import {connect} from "react-redux";
+import DeliveryActions from "../../Redux/DeliveryRedux";
+import PropTypes from "prop-types";
+import config from '../../config'
+import moment from "moment";
+import LoadingOverlay from 'react-loading-overlay';
+import {formatNumberAsCurency, parseDeliveryStatus} from "../../Utils";
+import DEMO from "../../store/constant";
+import ModalComponent from "../Applications/DeliveryPool/DeliveryPool";
 
 class ConfirmedDeliveries extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            page: 1
+        }
+    }
+    static propTypes = {
+        attemptFetchDeliveries: PropTypes.func.isRequired,
+    }
+
+
+    componentDidMount() {
+        this.props.attemptFetchDeliveries({
+            page: this.state.page,
+            status: config.DELIVERY_RECOVERY_INITIATED
+        })
+    }
+    renderTableRows = () => {
+        const { deliveriesPayload } = this.props.deliveries;
+        return deliveriesPayload.map((singleDelivery) => {
+            return (
+                <tr key={singleDelivery.id}>
+                    <th scope="row">{singleDelivery.id}</th>
+                    <td>{singleDelivery.name}</td>
+                    <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
+                    <td>{moment(singleDelivery.created_at).format('llll')}</td>
+                    <td>{singleDelivery.receiver_name}</td>
+                    <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
+                    <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>
+                </tr>
+            );
+        });
+    }
     render() {
+        const { deliveries } = this.props;
         return (
             <Aux>
                 <Row>
                     <Col>
-                        <Card title='Successful Deliveries' isOption>
-                            <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                            </p>
+                        <Card title='Confirmed Deliveries' anotherOption>
+                            <LoadingOverlay
+                                active={deliveries.deliveriesFetching}
+                                spinner
+                            >
+                                <Table striped responsive>
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Receiver</th>
+                                        <th>Status</th>
+                                        <th>View</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {this.renderTableRows()}
+                                    </tbody>
+                                </Table>
+                            </LoadingOverlay>
+
                         </Card>
                     </Col>
                 </Row>
@@ -24,5 +83,15 @@ class ConfirmedDeliveries extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        deliveries: state.deliveries
+    };
+};
 
-export default ConfirmedDeliveries;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data))
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ConfirmedDeliveries)

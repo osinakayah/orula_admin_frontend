@@ -3,6 +3,9 @@ export default {
     postLogin: ({email, password}) => {
         if (password === 'secret') {
             return {
+                headers:{
+                    authorization: "testHeader"
+                },
                 ok: true,
                 data : {
                     id: 1,
@@ -22,11 +25,11 @@ export default {
         }
 
     },
-    getFetchingDeliveries: ({page, type}) => {
+    getFetchingDeliveries: ({page, status}) => {
         if (page > 0 ) {
             return {
                 ok: true,
-                data: []
+                data: require('../Fixtures/deliveries')
             }
         }
         return {

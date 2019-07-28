@@ -1,9 +1,10 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
+import config from '../config'
 
 
 // our "constructor"
-const create = (baseURL = '') => {
+const create = (token = null) => {
     // ------
     // STEP 1
     // ------
@@ -12,15 +13,16 @@ const create = (baseURL = '') => {
     //
     const api = apisauce.create({
         // base URL is read from the "constructor"
-        baseURL,
+        baseURL: config.baseUrl,
+        headers: { Authorization: token },
     })
 
-    const postLogin = (email, password) => {
-
+    const postLogin = (data) => {
+        return api.post('api/v1/auth/login', data);
     }
 
-    const getFetchingDeliveries = () => {
-
+    const getFetchingDeliveries = (data) => {
+        return api.get(`api/v1/deliveries?status=${data.status}&page=${data.page}`)
     }
 
     return {

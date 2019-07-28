@@ -10,7 +10,8 @@ export  function *postLoginSaga(api, action) {
     const response = yield call(api.postLogin, data);
 
     if (response.ok) {
-        reactLocalStorage.set(config.authTokenLocalStorage, 'testAuthToken');
+        reactLocalStorage.set(config.authTokenLocalStorage, response.headers.authorization);
+
         yield put(LoginActions.loginSuccess(response.data))
         window.location = '/'
     }
