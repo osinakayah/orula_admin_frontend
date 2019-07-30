@@ -67,7 +67,7 @@ class ConfirmedDeliveries extends Component {
                                         <th>Date</th>
                                         <th>Receiver</th>
                                         <th>Status</th>
-                                        <th>View</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
