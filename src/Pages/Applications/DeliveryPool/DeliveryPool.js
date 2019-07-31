@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Badge} from 'react-bootstrap';
+import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 
 import Aux from "../../../hoc/_Aux";
 import DEMO from "../../../store/constant";
@@ -49,6 +49,9 @@ class DeliveryPool extends Component {
     }
 
     render() {
+        const pagStyle = {
+            float: "right"
+        };
         const { deliveries } = this.props;
         return (
             <Aux>
@@ -77,6 +80,16 @@ class DeliveryPool extends Component {
                                     </tbody>
                                 </Table>
                             </LoadingOverlay>
+
+                            <Pagination style={pagStyle} size="sm">
+                                <Pagination.First />
+                                <Pagination.Prev />
+                                    <Pagination.Item>
+                                        1 of 10 pages
+                                    </Pagination.Item>
+                                <Pagination.Next />
+                                <Pagination.Last />
+                            </Pagination>
 
                         </Card>
                     </Col>

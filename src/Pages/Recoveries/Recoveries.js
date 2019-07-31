@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Tabs, Tab, Badge} from 'react-bootstrap';
+import {Row, Col, Table, Tabs, Tab, Badge, Pagination} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import Aux from "../../hoc/_Aux";
 import moment from "moment";
@@ -80,6 +80,9 @@ class Recoveries extends Component {
     }
 
     render() {
+        const pagStyle = {
+            float: "right"
+        };
 
         const tabContent1 = (
             <Aux>
@@ -143,7 +146,17 @@ class Recoveries extends Component {
                             <Tab eventKey="claimed" title="Claimed Packages">
                                 {tabContent2}
                             </Tab>
+                            
                         </Tabs>
+                        <Pagination style={pagStyle} size="sm">
+                            <Pagination.First />
+                                <Pagination.Prev />
+                                    <Pagination.Item>
+                                        1 of 10 pages
+                                    </Pagination.Item>
+                                <Pagination.Next />
+                            <Pagination.Last />
+                        </Pagination>
                     </Col>
                 </Row>
             </Aux>

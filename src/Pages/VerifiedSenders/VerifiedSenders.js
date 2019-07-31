@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import {Row, Badge, Col, Table} from 'react-bootstrap';
+import {Row, Badge, Col, Table, Pagination} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
 
 class VerifiedSenders extends Component {
     render() {
+        const pagStyle = {
+            float: "right"
+        };
         return (
             <Aux>
                 <Row>
@@ -45,6 +48,15 @@ class VerifiedSenders extends Component {
                                 </tr>
                                 </tbody>
                             </Table>
+                            <Pagination style={pagStyle} size="sm">
+                                <Pagination.First />
+                                    <Pagination.Prev />
+                                        <Pagination.Item>
+                                            1 of 10 pages
+                                        </Pagination.Item>
+                                    <Pagination.Next />
+                                <Pagination.Last />
+                            </Pagination>
                         </Card>
                     </Col>
                 </Row>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Badge} from 'react-bootstrap';
+import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
@@ -7,6 +7,9 @@ import DispatchersModal from "./DispatchersModal";
 
 class VerifiedDispatchers extends Component {
     render() {
+        const pagStyle = {
+            float: "right"
+        };
         return (
             <Aux>
                 <Row>
@@ -54,6 +57,15 @@ class VerifiedDispatchers extends Component {
                                 </tr>
                                 </tbody>
                             </Table>
+                            <Pagination style={pagStyle} size="sm">
+                                <Pagination.First />
+                                    <Pagination.Prev />
+                                        <Pagination.Item>
+                                            1 of 10 pages
+                                        </Pagination.Item>
+                                    <Pagination.Next />
+                                <Pagination.Last />
+                            </Pagination>
                         </Card>
                     </Col>
                 </Row>

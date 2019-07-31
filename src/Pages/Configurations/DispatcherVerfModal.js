@@ -1,7 +1,7 @@
 //DispatcherVerfModal.js
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-import {Row, Col, Card, Badge, Form, FormControl, Tabs, Tab,} from 'react-bootstrap';
+import {Row, Col, Badge, Form, FormControl, Tabs, Tab,} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 
 class DispatcherVerfModal extends React.Component {

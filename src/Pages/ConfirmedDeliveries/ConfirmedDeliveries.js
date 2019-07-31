@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Table, Badge} from 'react-bootstrap';
+import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
@@ -11,7 +11,6 @@ import moment from "moment";
 import LoadingOverlay from 'react-loading-overlay';
 import {formatNumberAsCurency, parseDeliveryStatus} from "../../Utils";
 import DEMO from "../../store/constant";
-import ModalComponent from "../Applications/DeliveryPool/DeliveryPool";
 
 class ConfirmedDeliveries extends Component {
     constructor(props){
@@ -42,12 +41,15 @@ class ConfirmedDeliveries extends Component {
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}>View</a></td>
                 </tr>
             );
         });
     }
     render() {
+        const pagStyle = {
+            float: "right"
+        };
         const { deliveries } = this.props;
         return (
             <Aux>
@@ -75,6 +77,15 @@ class ConfirmedDeliveries extends Component {
                                     </tbody>
                                 </Table>
                             </LoadingOverlay>
+                            <Pagination style={pagStyle} size="sm">
+                                <Pagination.First />
+                                    <Pagination.Prev />
+                                        <Pagination.Item>
+                                            1 of 10 pages
+                                        </Pagination.Item>
+                                    <Pagination.Next />
+                                <Pagination.Last />
+                            </Pagination>
 
                         </Card>
                     </Col>

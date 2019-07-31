@@ -1,6 +1,6 @@
 //ModalComponent.js
 import React from 'react';
-import {Card, Badge} from 'react-bootstrap';
+import {Badge} from 'react-bootstrap';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import Aux from "../../hoc/_Aux";
 class ModalComponent extends React.Component {
