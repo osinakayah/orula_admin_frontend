@@ -13,7 +13,7 @@ export  function *postLoginSaga(api, action) {
         reactLocalStorage.set(config.authTokenLocalStorage, response.headers.authorization);
 
         yield put(LoginActions.loginSuccess(response.data))
-        window.location = '/'
+        window.location = 'https://osinakayah.github.io/orula_admin_frontend/'
     }
     else {
         ToastsStore.error(response.data.error);
