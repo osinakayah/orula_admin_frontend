@@ -1,7 +1,7 @@
 //DispatcherVerfModal.js
 import React from 'react';
 import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-import {Row, Col, Card, Badge, Form, FormControl, Tabs, Tab,} from 'react-bootstrap';
+import {Row, Col, Badge, Form, FormControl, Tabs, Tab,} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 
 class DispatcherVerfModal extends React.Component {
@@ -135,12 +135,17 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">09031822677</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Valid ID No.:</h6>
                         </div>
                         <div className="col-8 text-left">
                             <p className="m-b-0">011711334899654</p>
+                        </div>
+                    </div>
+                    <div className="row d-flex align-items-center">
+                        <div className="col-12 text-center">
+                            <Button color="warning" type="button" size="sm">View Upload</Button>
                         </div>
                     </div>
                     <div className="progress m-t-50" style={{height: '3px'}}>
@@ -167,22 +172,17 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">Gurantee Trust Bank</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center mb-2">
+                    <div className="row d-flex align-items-center">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Account No:</h6>
                         </div>
                         <div className="col-8 text-left">
                             <p className="m-b-0">0117899654</p>
                         </div>
-                    </div>
-                    <div className="row d-flex align-items-center">
-                        <div className="col-12 text-center">
-                            <Button color="warning" type="button" size="sm">View Upload</Button>
-                        </div>
-                    </div>
-                    <div className="progress m-t-10" style={{height: '3px'}}>
+                    </div>   
+                    {/* <div className="progress m-t-10" style={{height: '3px'}}>
                         <div className="progress-bar progress-c-theme" role="progressbar" style={{width: '100%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"/>
-                    </div>
+                    </div> */}
                     </Col>   
                 </Row>
               </Col>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Dropdown, Card, Collapse} from 'react-bootstrap';
 import windowSize from 'react-window-size';
-
 import Aux from "../../hoc/_Aux";
 import DEMO from "../../store/constant";
 
@@ -27,7 +26,8 @@ class MainCard extends Component {
     };
 
     render() {
-        let fullScreenStyle, loader, cardHeaderRight, cardHeader;
+
+        let fullScreenStyle, loader, cardHeaderRight, cardHeader, paginated;
         let card = '';
         let cardClass = [];
 
@@ -132,9 +132,11 @@ class MainCard extends Component {
                     </div>
                 </Collapse>
                 {loader}
+                {paginated}     
             </Card>
         );
 
+    
         return (
             <Aux>
                 {card}
