@@ -11,10 +11,10 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/orula_admin_frontend/precache-manifest.da4a300f5925df50716e5737546acac7.js"
+  "/orula_admin_frontend/precache-manifest.9cc0dd04bea81f32c4b9273ad049b7ab.js"
 );
 
 self.addEventListener('message', (event) => {
