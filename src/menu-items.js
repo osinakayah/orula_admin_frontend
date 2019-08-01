@@ -78,30 +78,30 @@ export default {
                     title: 'Deliveries',
                     type: 'collapse',
                     icon: 'feather icon-box',
-                    badge: {
-                        title: 'New',
-                        type: 'label-danger'
-                    },
+                    // badge: {
+                    //     title: 'New',
+                    //     type: 'label-danger'
+                    // },
                     children: [
                         {
                             id: 'pendingrequests',
                             title: 'Pending Requests',
                             type: 'item',
                             url: '/applications/requestpool/request-pool',
-                            badge: {
-                                title: '3',
-                                type: 'label-danger'
-                            }
+                            // badge: {
+                            //     title: '3',
+                            //     type: 'label-danger'
+                            // }
                         },
                         {
                             id: 'deliverypool',
                             title: 'Deliveries In Transit',
                             type: 'item',
                             url: '/applications/deliverypool/delivery-pool',
-                            badge: {
-                                title: '1',
-                                type: 'label-danger'
-                            }
+                            // badge: {
+                            //     title: '1',
+                            //     type: 'label-danger'
+                            // }
                         },
                         // {
                         //     id: 'breadcrumb-pagination',

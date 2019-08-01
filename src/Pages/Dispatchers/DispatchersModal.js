@@ -8,7 +8,8 @@ import DEMO from "../../store/constant";
 class DispatchersModal extends React.Component {
 
     state = {
-         modal: false};
+         modal: false
+    };
 
     toggle = this.toggle.bind(this);
 

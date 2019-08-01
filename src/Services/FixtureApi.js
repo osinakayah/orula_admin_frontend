@@ -29,7 +29,21 @@ export default {
         if (page > 0 ) {
             return {
                 ok: true,
-                data: require('../Fixtures/deliveries')
+                data: require('../Fixtures/deliveries.json')
+            }
+        }
+        return {
+            ok: false,
+            data: {
+                error: "Something went wrong"
+            }
+        }
+    },
+    getFetchingDelivery: ({id}) => {
+        if (id > 0) {
+            return {
+                ok: true,
+                data: require('../Fixtures/delivery.json')
             }
         }
         return {

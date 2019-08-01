@@ -18,16 +18,20 @@ const create = (token = null) => {
     })
 
     const postLogin = (data) => {
-        return api.post('api/v1/auth/login', data);
+        return api.post('auth/login', data);
     }
 
     const getFetchingDeliveries = (data) => {
-        return api.get(`api/v1/deliveries?status=${data.status}&page=${data.page}`)
+        return api.get(`deliveries?status=${data.status}&page=${data.page}`)
+    }
+    const getFetchingDelivery = (data) => {
+        return api.get(`deliveries/${data.id}`)
     }
 
     return {
         postLogin,
-        getFetchingDeliveries
+        getFetchingDeliveries,
+        getFetchingDelivery
     }
 }
 
