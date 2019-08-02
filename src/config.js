@@ -24,7 +24,7 @@ export default {
     layout6BackSize : '', // used only for pre-layout = layout-6,
     debug: true,
     authTokenLocalStorage: 'authTokenLocalStorage',
-    baseUrl:'http://localhost:3000/',
+    baseUrl:'http://localhost:3000/api/v1/',
 
     DELIVERY_INITIATED: 0,
     DELIVERY_ITEM_PICKED: 1,

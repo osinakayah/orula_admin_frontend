@@ -29,7 +29,7 @@ export default {
         if (page > 0 ) {
             return {
                 ok: true,
-                data: require('../Fixtures/deliveries')
+                data: require('../Fixtures/deliveries.json')
             }
         }
         return {
@@ -38,6 +38,48 @@ export default {
                 error: "Something went wrong"
             }
         }
-    }
+    },
+    getFetchingDelivery: ({id}) => {
+        if (id > 0) {
+            return {
+                ok: true,
+                data: require('../Fixtures/delivery.json')
+            }
+        }
+        return {
+            ok: false,
+            data: {
+                error: "Something went wrong"
+            }
+        }
+    },
+    getFetchingCustomers: ({page, status}) => {
+        if (page > 0) {
+            return {
+                ok: true,
+                data: require('../Fixtures/customers.json')
+            }
+        }
+        return {
+            ok: false,
+            data: {
+                error: "Something went wrong"
+            }
+        }
+    },
+    getFetchingCustomer: ({id}) => {
+        if (id > 0) {
+            return {
+                ok: true,
+                data: require('../Fixtures/customer.json')
+            }
+        }
+        return {
+            ok: false,
+            data: {
+                error: "Something went wrong"
+            }
+        }
+    },
 
 }
