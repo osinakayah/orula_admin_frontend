@@ -1,14 +1,14 @@
 import React from 'react';
-import {Row, Col, Card, Table} from 'react-bootstrap';
+import {Row, Col, Card} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import Aux from "../../hoc/_Aux";
 import DEMO from "../../store/constant";
 // import ModalComponent from '../../App/components/ModalComponent';
 // import LoaderComponent from '../../App/components/LoaderComponent';
 
-import avatar1 from '../../assets/images/user/avatar-1.jpg';
-import avatar2 from '../../assets/images/user/avatar-2.jpg';
-import avatar3 from '../../assets/images/user/avatar-3.jpg';
+// import avatar1 from '../../assets/images/user/avatar-1.jpg';
+// import avatar2 from '../../assets/images/user/avatar-2.jpg';
+// import avatar3 from '../../assets/images/user/avatar-3.jpg';
 
 class Dashboard extends React.Component {
     render() {
@@ -70,68 +70,6 @@ class Dashboard extends React.Component {
         //         </div>
         //     </Aux>
         // );
-
-        const TableRes = (
-            <Table responsive hover>
-                <tbody>
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar1} alt="activity-user"/></td>
-                        <td>
-                            <h6 className="mb-1">Daniel Abayomi</h6>
-                            <p className="m-0">Lorem Ipsum is simply dummy text of…</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>11 JUL 12:56</h6>
-                        </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12">Details</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12">Review</a></td>
-                    </tr>
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/></td>
-                        <td>
-                            <h6 className="mb-1">Cynthia Ezechukwu</h6>
-                            <p className="m-0">Lorem Ipsum is simply dummy text of…</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-red f-10 m-r-15"/>11 JUL 10:35</h6>
-                        </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12">Details</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12">Review</a></td>
-                    </tr>
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar3} alt="activity-user"/></td>
-                        <td>
-                            <h6 className="mb-1">Ifeanyi Osinakayah</h6>
-                            <p className="m-0">Lorem Ipsum is simply dummy text of…</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>9 JUL 17:38</h6>
-                        </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12">Details</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12">Review</a></td>
-                    </tr>
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar1} alt="activity-user"/></td>
-                        <td>
-                            <h6 className="mb-1">Cynthia Ezechukwu</h6>
-                            <p className="m-0">Lorem Ipsum is simply dummy text of…</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted f-w-300"><i className="fa fa-circle text-c-red f-10 m-r-15"/>19 JUL 12:56</h6>
-                        </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12">Details</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12">Review</a></td>
-                    </tr>
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/></td>
-                        <td>
-                            <h6 className="mb-1">Cynthia Ezechukwu</h6>
-                            <p className="m-0">Lorem Ipsum is simply dummy text of…</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>21 JUL 12:56</h6>
-                        </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12">Details</a><a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12">Review</a></td>
-                    </tr>
-                </tbody>
-            </Table>
-        );
 
         return (
                 <Aux>
@@ -259,7 +197,7 @@ class Dashboard extends React.Component {
                     </Col>
 
 
-                    <Col md={6} xl={8}>
+                    {/* <Col md={6} xl={8}>
                         <Card className='Recent-Users'>
                             <Card.Header>
                                 <Card.Title as='h5'>Recent Activities</Card.Title>
@@ -268,7 +206,52 @@ class Dashboard extends React.Component {
                                 {TableRes}     
                             </Card.Body>
                         </Card>
+                    </Col> */}
+                    <Col md={12} xl={12}>
+                        <h6 className='mb-4 f-w-600 text-c-red'>RECOVERIES</h6>
                     </Col>
+
+                    <Col md={6} xl={4}>
+                        <Card>
+                            <Card.Body>
+                                <h6 className='mb-4'>Year-Till-Date</h6>
+                                <div className="row d-flex align-items-center">
+                                    <div className="col-8">
+                                        <h4 className="f-w-300 d-flex align-items-center m-b-0"><i className="feather icon-arrow-up text-c-green f-30 m-r-5"/> &#8358;19,638,320</h4>
+                                    </div>
+
+                                    <div className="col-4 text-right">
+                                        <p className="m-b-0"><i className="feather icon-wind f-22 text-c-green"/>670</p>
+                                    </div>
+                                </div>
+                                <div className="progress m-t-30" style={{height: '7px'}}>
+                                    <div className="progress-bar progress-c-theme" role="progressbar" style={{width: '100%'}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"/>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+
+                    <Col md={6} xl={4}>
+                        <Card>
+                            <Card.Body>
+                                <h6 className='mb-4'>Year-Till-Date</h6>
+                                <div className="row d-flex align-items-center">
+                                    <div className="col-8">
+                                        <h4 className="f-w-300 d-flex align-items-center m-b-0"><i className="feather icon-arrow-up text-c-green f-30 m-r-5"/> &#8358;19,638,320</h4>
+                                    </div>
+
+                                    <div className="col-4 text-right">
+                                        <p className="m-b-0"><i className="feather icon-wind f-22 text-c-green"/>670</p>
+                                    </div>
+                                </div>
+                                <div className="progress m-t-30" style={{height: '7px'}}>
+                                    <div className="progress-bar progress-c-theme" role="progressbar" style={{width: '100%'}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"/>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+
+
                     <Col md={6} xl={4}>
                         <Card className='card-event'>
                             <Card.Body>
@@ -286,7 +269,9 @@ class Dashboard extends React.Component {
                                 <i className="fa fa-bolt text-c-purple f-50"/>
                             </Card.Body>
                         </Card>
-                        <Card>
+                    </Col>
+                    <Col md={6} xl={4}>
+                    <Card>
                             <Card.Body className='border-bottom'>
                                 <div className="row d-flex align-items-center">
                                     <div className="col-auto">

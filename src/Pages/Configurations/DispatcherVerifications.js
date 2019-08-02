@@ -4,7 +4,7 @@ import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
 import DEMO from "../../store/constant";
-import DispatcherVerfModal from './DispatcherVerfModal';
+import DispatchersModal from "../../Components/Modals/DispatchersModal";
 
 class DispatcherVerifications extends Component {
     render() {
@@ -36,7 +36,7 @@ class DispatcherVerifications extends Component {
                                     <td>27/07/19 12:03pm</td>
                                     <td>Car</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatchersModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
@@ -45,7 +45,7 @@ class DispatcherVerifications extends Component {
                                     <td>27/07/19 10:33am</td>
                                     <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatchersModal/></a></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
@@ -54,7 +54,7 @@ class DispatcherVerifications extends Component {
                                     <td>27/07/19 13:25pm</td>
                                     <td>Bike</td>
                                     <td><Badge variant="warning">Running</Badge></td>
-                                    <td><a href={DEMO.BLANK_LINK}><DispatcherVerfModal/></a></td>
+                                    <td><a href={DEMO.BLANK_LINK}><DispatchersModal/></a></td>
                                 </tr>
                                 </tbody>
                             </Table>

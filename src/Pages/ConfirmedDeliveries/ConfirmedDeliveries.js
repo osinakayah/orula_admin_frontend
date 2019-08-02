@@ -11,6 +11,7 @@ import moment from "moment";
 import LoadingOverlay from 'react-loading-overlay';
 import {formatNumberAsCurency, parseDeliveryStatus} from "../../Utils";
 import DEMO from "../../store/constant";
+import DeliveryModal from "../../Components/Modals/DeliveryModal";
 
 class ConfirmedDeliveries extends Component {
     constructor(props){
@@ -40,8 +41,8 @@ class ConfirmedDeliveries extends Component {
                     <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
                     <td>{singleDelivery.receiver_name}</td>
-                    <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}>View</a></td>
+                    <td><Badge variant="success">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
                 </tr>
             );
         });

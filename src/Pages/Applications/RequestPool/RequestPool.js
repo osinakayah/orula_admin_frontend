@@ -4,7 +4,6 @@ import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 import Aux from "../../../hoc/_Aux";
 import DEMO from "../../../store/constant";
 import Card from "../../../Components/MainCard";
-import ModalComponent from '../../../Components/ModalComponent';
 import DeliveryActions from '../../../Redux/DeliveryRedux'
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
@@ -13,6 +12,7 @@ import './RequestPoolStyles.css'
 import { formatNumberAsCurency, parseDeliveryStatus } from "../../../Utils";
 import moment from "moment";
 import config from "../../../config";
+import DeliveryModal from '../../../Components/Modals/DeliveryModal';
 
 class RequestPool extends Component {
 
@@ -45,7 +45,7 @@ class RequestPool extends Component {
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
                 </tr>
             );
         });

@@ -3,7 +3,7 @@ import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
-import DispatchersModal from "./DispatchersModal";
+import DispatchersModal from "../../Components/Modals/DispatchersModal";
 
 class VerifiedDispatchers extends Component {
     render() {

@@ -29,7 +29,7 @@ class RecoveryModal extends React.Component {
 
         <Aux>
         {/* <Badge variant="warning" size="sm" onClick={this.toggle}>View</Badge> */}
-        <a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1} onClick={this.toggle}>Claim</a>
+        <a href={DEMO.BLANK_LINK} className="label theme-bg text-white f-12" style={btnstyle1} onClick={this.toggle}>Review</a>
         <Modal isOpen={this.state.modal} size="lg">
         <Form onSubmit={this.handleSubmit}>
           <ModalHeader>Claim Recovery</ModalHeader>

@@ -4,7 +4,7 @@ import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 import Aux from "../../../hoc/_Aux";
 import DEMO from "../../../store/constant";
 import Card from "../../../Components/MainCard";
-import ModalComponent from '../../../Components/ModalComponent';
+import DeliveryModal from '../../../Components/Modals/DeliveryModal';
 import DeliveryActions from "../../../Redux/DeliveryRedux";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
@@ -40,9 +40,10 @@ class DeliveryPool extends Component {
                     <td>{singleDelivery.name}</td>
                     <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
+                    <td>Product Name</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><ModalComponent/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
                 </tr>
             );
         });

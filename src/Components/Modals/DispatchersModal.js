@@ -4,7 +4,7 @@ import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import {Row, Col, Badge, Form, FormControl, Tabs, Tab,} from 'react-bootstrap';
 import Aux from "../../hoc/_Aux";
 
-class DispatcherVerfModal extends React.Component {
+class DispatchersModal extends React.Component {
 
     state = {
          modal: false};
@@ -26,7 +26,7 @@ class DispatcherVerfModal extends React.Component {
                 <Row>
                 <Col md={6} className="mb-4">
                     <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Dispatcher's Info</h6>
-                        <div className="row d-flex align-items-center">
+                        <div className="row d-flex align-items-center mb-2">
                             <div className="col-4 text-right">
                                 <h6 className="f-w-300 m-b-0">Name:</h6>
                             </div>
@@ -35,7 +35,7 @@ class DispatcherVerfModal extends React.Component {
                                 <p className="m-b-0">Daniel Abayomi</p>
                             </div>
                         </div>
-                        <div className="row d-flex align-items-center">
+                        <div className="row d-flex align-items-center mb-2">
                             <div className="col-4 text-right">
                                 <h6 className="f-w-300 m-b-0">Phone:</h6>
                             </div>
@@ -69,7 +69,7 @@ class DispatcherVerfModal extends React.Component {
                     </Col>
                     <Col md={6} className="mb-4">
                     <h6 className='mb-4'><i className="feather icon-user text-c-green f-20 m-r-5"/> Additional Info</h6>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Date Of Birth:</h6>
                         </div>
@@ -78,7 +78,7 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">10/10/1981</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Nationality:</h6>
                         </div>
@@ -86,7 +86,7 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">Nigerian</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">State of Origin:</h6>
                         </div>
@@ -95,7 +95,7 @@ class DispatcherVerfModal extends React.Component {
                         </div>
                     </div>
                     <hr/>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Language:</h6>
                         </div>
@@ -118,7 +118,7 @@ class DispatcherVerfModal extends React.Component {
 
                     <Col md={6}>
                     <h6 className='mb-4'><i className="feather icon-users text-c-green f-20 m-r-5"/> Guarantor's Info</h6>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Name:</h6>
                         </div>
@@ -127,7 +127,7 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">Samuel Oladele</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Phone:</h6>
                         </div>
@@ -155,7 +155,7 @@ class DispatcherVerfModal extends React.Component {
 
                     <Col md={6}>
                     <h6 className='mb-4'><i className="feather icon-briefcase text-c-green f-20 m-r-5"/> Bank Info</h6>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Name:</h6>
                         </div>
@@ -164,7 +164,7 @@ class DispatcherVerfModal extends React.Component {
                             <p className="m-b-0">Daniel Abayomi</p>
                         </div>
                     </div>
-                    <div className="row d-flex align-items-center">
+                    <div className="row d-flex align-items-center mb-2">
                         <div className="col-4 text-right">
                             <h6 className="f-w-300 m-b-0">Bank Name:</h6>
                         </div>
@@ -193,7 +193,7 @@ class DispatcherVerfModal extends React.Component {
         <Row>
             <Col md={6}>
                 <h6 className='mb-4'><i className="feather icon-map text-c-green f-20 m-r-5"/> Vehicle Info</h6>
-                <div className="row d-flex align-items-center">
+                <div className="row d-flex align-items-center mb-2">
                     <div className="col-4 text-right">
                         <h6 className="f-w-300 m-b-0">Vehicle Type:</h6>
                     </div>
@@ -201,7 +201,7 @@ class DispatcherVerfModal extends React.Component {
                         <p className="m-b-0">Bike</p>
                     </div>
                 </div>
-                <div className="row d-flex align-items-center">
+                <div className="row d-flex align-items-center mb-2">
                     <div className="col-4 text-right">
                         <h6 className="f-w-300 m-b-0">Vehicle Name:</h6>
                     </div>
@@ -222,7 +222,7 @@ class DispatcherVerfModal extends React.Component {
                 </div>
                 <hr/>
 
-                <div className="row d-flex align-items-center">
+                <div className="row d-flex align-items-center mb-2">
                     <div className="col-4 text-right">
                         <h6 className="f-w-300 m-b-0">Branch:</h6>
                     </div>
@@ -270,7 +270,7 @@ class DispatcherVerfModal extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                 <ModalHeader>Verify A Dispatcher</ModalHeader>
                 <ModalBody>
-                    <p className="text-muted text-center">Switch between tabs to navigate</p>
+                    <p className="text-center" style={{color: "red"}}>Switch between tabs to navigate</p>
                     <Tabs defaultActiveKey="personal" id="uncontrolled-tab-example" onSelect={this.onTabDifferentTabSelected}>
                     <Tab eventKey="personal" title="Personal Info">
                         {personalInfo}
@@ -292,4 +292,4 @@ class DispatcherVerfModal extends React.Component {
   }
 }
 
-export default DispatcherVerfModal;
+export default DispatchersModal;

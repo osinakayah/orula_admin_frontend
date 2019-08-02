@@ -3,19 +3,13 @@ import {Row, Col, Table, Tabs, Tab, Badge, Pagination} from 'react-bootstrap';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import Aux from "../../hoc/_Aux";
 import moment from "moment";
-// import Card from "../../App/components/MainCard";
-import DEMO from "../../store/constant";
 import avatar1 from '../../assets/images/user/avatar-1.jpg';
 import avatar2 from '../../assets/images/user/avatar-2.jpg';
-import RecoveryModal from './RecoveryModal';
+import RecoveryModal from '../../Components/Modals/RecoveryModal';
 import PropTypes from "prop-types";
 import config from "../../config";
 import {connect} from "react-redux";
 import DeliveryActions from "../../Redux/DeliveryRedux";
-
-const btnstyle1 = {
-    borderRadius: '15px',
-}
 
 
 class Recoveries extends Component {
@@ -51,7 +45,7 @@ class Recoveries extends Component {
                     <td>
                         <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updated_at).format('llll')}</h6>
                     </td>
-                    <td><Badge variant="success"><i className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge>
+                    <td><Badge variant="success m-r-15"><i className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><RecoveryModal/>
                     </td>
                 </tr>
             )
@@ -72,8 +66,7 @@ class Recoveries extends Component {
                     <td>
                         <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updated_at).format('llll')}</h6>
                     </td>
-                    <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12"
-                           style={btnstyle1}>Review</a><RecoveryModal/></td>
+                    <td><RecoveryModal/></td>
                 </tr>
             );
         });
@@ -100,8 +93,7 @@ class Recoveries extends Component {
                             <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>21 JUL
                                 12:56</h6>
                         </td>
-                        <td><a href={DEMO.BLANK_LINK} className="label theme-bg2 text-white f-12"
-                               style={btnstyle1}>Review</a><RecoveryModal/></td>
+                        <td><RecoveryModal/></td>
                     </tr>
                     </tbody>
                 </Table>
@@ -125,8 +117,7 @@ class Recoveries extends Component {
                             </h6>
                         </td>
                         <td><Badge variant="success m-r-15"><i
-                            className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><Badge
-                            variant="warning">Details</Badge></td>
+                            className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><RecoveryModal/></td>
                     </tr>
                     </tbody>
                 </Table>
