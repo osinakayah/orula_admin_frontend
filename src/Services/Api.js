@@ -27,11 +27,19 @@ const create = (token = null) => {
     const getFetchingDelivery = (data) => {
         return api.get(`deliveries/${data.id}`)
     }
+    const getFetchingCustomers = (data) => {
+        return api.get(`customers?status=${data.status}&page=${data.page}`)
+    }
+    const getFetchingCustomer = () => {
+        return api.get(`customers/${data.id}`)
+    }
 
     return {
         postLogin,
         getFetchingDeliveries,
-        getFetchingDelivery
+        getFetchingDelivery,
+        getFetchingCustomers,
+        getFetchingCustomer
     }
 }
 
