@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Shoe",
+    "name": "Hair",
     "description": "",
+    "reason_for_failure": "Receiver was not around",
     "status": 0,
     "delivery_type": 1,
     "amount": "12.0",
@@ -14,15 +15,16 @@
     "destination_lng": "2.23122",
     "receiver_name": "John Doe",
     "receiver_phone_number": "08160831711",
-    "created_at": "2019-07-27T19:33:43.327Z",
-    "updated_at": "2019-07-27T19:33:43.327Z",
+    "created_at": "2019-08-01T19:23:51.484Z",
+    "updated_at": "2019-08-01T19:23:51.484Z",
     "customer_id": 1
   },
   {
     "id": 2,
-    "name": "Bag",
+    "name": "Shoes",
     "description": "",
-    "status": 0,
+    "reason_for_failure": "Receiver phone number was off",
+    "status": 1,
     "delivery_type": 1,
     "amount": "12.0",
     "pick_up_address": "Ikorodu",
@@ -33,15 +35,16 @@
     "destination_lng": "2.23122",
     "receiver_name": "John Doe",
     "receiver_phone_number": "08160831711",
-    "created_at": "2019-07-27T19:34:20.181Z",
-    "updated_at": "2019-07-27T19:34:20.181Z",
+    "created_at": "2019-08-01T19:23:51.484Z",
+    "updated_at": "2019-08-01T19:23:51.484Z",
     "customer_id": 1
   },
   {
     "id": 3,
-    "name": "Hair",
+    "name": "Bags",
     "description": "",
-    "status": 0,
+    "reason_for_failure": "I could not locate the exact address",
+    "status": 3,
     "delivery_type": 1,
     "amount": "12.0",
     "pick_up_address": "Ikorodu",
@@ -52,8 +55,8 @@
     "destination_lng": "2.23122",
     "receiver_name": "John Doe",
     "receiver_phone_number": "08160831711",
-    "created_at": "2019-07-27T19:34:31.378Z",
-    "updated_at": "2019-07-27T19:34:31.378Z",
+    "created_at": "2019-08-01T19:23:51.484Z",
+    "updated_at": "2019-08-01T19:23:51.484Z",
     "customer_id": 1
   }
 ]

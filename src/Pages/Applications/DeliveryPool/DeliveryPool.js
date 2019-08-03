@@ -22,6 +22,7 @@ class DeliveryPool extends Component {
     }
     static propTypes = {
         attemptFetchDeliveries: PropTypes.func.isRequired,
+        attemptFetchDelivery: PropTypes.func.isRequired
     }
 
 
@@ -32,7 +33,7 @@ class DeliveryPool extends Component {
         })
     }
     renderTableRows = () => {
-        const { deliveriesPayload } = this.props.deliveries;
+        const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
         return deliveriesPayload.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
@@ -43,7 +44,7 @@ class DeliveryPool extends Component {
                     <td>Product Name</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} deliveryId={singleDelivery.id} singleDeliveryExtraDetails={deliveryPayload}/></a></td>
                 </tr>
             );
         });
@@ -67,7 +68,7 @@ class DeliveryPool extends Component {
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Sender</th>
+                                        <th>Item</th>
                                         <th>Amount</th>
                                         <th>Date</th>
                                         <th>Product</th>
@@ -86,7 +87,7 @@ class DeliveryPool extends Component {
                                 <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of 10 pages
+                                        1 of 1 pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                                 <Pagination.Last />
@@ -107,7 +108,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data))
+        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data)),
+        attemptFetchDelivery: (data) => dispatch(DeliveryActions.fetchingDeliveryRequest(data))
     }
 };
 

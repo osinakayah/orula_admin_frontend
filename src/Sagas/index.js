@@ -10,7 +10,7 @@ import { DeliveryTypes } from "../Redux/DeliveryRedux";
 
 //-------------------Sagas-------------------
 import { postLoginSaga } from "./LoginSaga";
-import { getFetchingDeliveriesSaga } from "./DeliverySaga";
+import { getFetchingDeliveriesSaga, getFetchingDeliverySaga } from "./DeliverySaga";
 
 // ----------------API--------------
 const api = config.debug ? FixtureAPI : API.create(reactLocalStorage.get(config.authTokenLocalStorage))
@@ -19,6 +19,7 @@ const api = config.debug ? FixtureAPI : API.create(reactLocalStorage.get(config.
 export default function * root() {
     yield all([
         takeLatest(LoginTypes.LOGIN_REQUEST, postLoginSaga, api),
-        takeLatest(DeliveryTypes.FETCHING_DELIVERIES_REQUEST, getFetchingDeliveriesSaga, api)
+        takeLatest(DeliveryTypes.FETCHING_DELIVERIES_REQUEST, getFetchingDeliveriesSaga, api),
+        takeLatest(DeliveryTypes.FETCHING_DELIVERY_REQUEST, getFetchingDeliverySaga, api),
     ]);
 }

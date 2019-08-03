@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 // import Table from "../../Tables/BootstrapTable";
 import Aux from "../../../hoc/_Aux";
-import DEMO from "../../../store/constant";
+// import DEMO from "../../../store/constant";
 import Card from "../../../Components/MainCard";
 import DeliveryActions from '../../../Redux/DeliveryRedux'
 import {connect} from "react-redux";
@@ -13,8 +13,9 @@ import { formatNumberAsCurency, parseDeliveryStatus } from "../../../Utils";
 import moment from "moment";
 import config from "../../../config";
 import DeliveryModal from '../../../Components/Modals/DeliveryModal';
+import DEMO from "../../../store/constant";
 
-class RequestPool extends Component {
+class RequestPool extends PureComponent {
 
     constructor(props){
         super(props)
@@ -24,6 +25,7 @@ class RequestPool extends Component {
     }
     static propTypes = {
         attemptFetchDeliveries: PropTypes.func.isRequired,
+        attemptFetchDelivery: PropTypes.func.isRequired
     }
 
 
@@ -35,7 +37,7 @@ class RequestPool extends Component {
     }
 
     renderTableRows = () => {
-        const { deliveriesPayload } = this.props.deliveries;
+        const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
         return deliveriesPayload.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
@@ -45,7 +47,7 @@ class RequestPool extends Component {
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal singleDeliveryExtraDetails={deliveryPayload} fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} deliveryId={singleDelivery.id}/></a></td>
                 </tr>
             );
         });
@@ -87,7 +89,7 @@ class RequestPool extends Component {
                                 <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of 10 pages
+                                        1 of 1 pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                                 <Pagination.Last />
@@ -108,7 +110,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data))
+        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data)),
+        attemptFetchDelivery: (data) => dispatch(DeliveryActions.fetchingDeliveryRequest(data))
     }
 };
 

@@ -81,20 +81,7 @@ class Recoveries extends Component {
             <Aux>
                 <Table responsive hover>
                     <tbody>
-                    {this._renderPendingRecoveries()}
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/>
-                        </td>
-                        <td>
-                            <h6 className="mb-1">Cynthia Ezechukwu</h6>
-                            <p className="m-0">Delayed delivery due to traffic holdup...</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>21 JUL
-                                12:56</h6>
-                        </td>
-                        <td><RecoveryModal/></td>
-                    </tr>
+                        {this._renderPendingRecoveries()}
                     </tbody>
                 </Table>
             </Aux>
@@ -104,21 +91,7 @@ class Recoveries extends Component {
             <Aux>
                 <Table responsive hover>
                     <tbody>
-                    {this._renderClaimedRecoveries()}
-                    <tr className="unread">
-                        <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/>
-                        </td>
-                        <td>
-                            <h6 className="mb-1">Cynthia Ezechukwu</h6>
-                            <p className="m-0">Receiver left delivery location...</p>
-                        </td>
-                        <td>
-                            <h6 className="text-muted"><i className="fa fa-circle text-c-red f-10 m-r-15"/>11 JUL 10:35
-                            </h6>
-                        </td>
-                        <td><Badge variant="success m-r-15"><i
-                            className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><RecoveryModal/></td>
-                    </tr>
+                        {this._renderClaimedRecoveries()}
                     </tbody>
                 </Table>
             </Aux>
@@ -143,7 +116,7 @@ class Recoveries extends Component {
                             <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of 10 pages
+                                        1 of 1 pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                             <Pagination.Last />

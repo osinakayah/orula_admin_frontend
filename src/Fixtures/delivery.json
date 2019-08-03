@@ -1,8 +1,8 @@
 {
   "delivery": {
     "name": "Hair",
-    "description": "10 inches frontal",
-    "reason_for_failure": "Receiver was not around",
+    "description": "",
+    "reason_for_failure": "",
     "amount": "12.0",
     "pick_up_address": "Ikorodu",
     "pick_up_lat": "0.0231",
@@ -13,6 +13,7 @@
     "receiver_phone_number": "08160831711"
   },
   "customer": {
-    "phone_number": "08160831611"
+    "phone_number": "08160831611",
+    "fullname": "John Doe"
   }
 }

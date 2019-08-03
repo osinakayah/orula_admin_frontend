@@ -30,7 +30,7 @@ const create = (token = null) => {
     const getFetchingCustomers = (data) => {
         return api.get(`customers?status=${data.status}&page=${data.page}`)
     }
-    const getFetchingCustomer = () => {
+    const getFetchingCustomer = (data) => {
         return api.get(`customers/${data.id}`)
     }
 

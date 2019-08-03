@@ -8,7 +8,7 @@ const { Types, Creators } = createActions({
     fetchingDeliveriesSuccess: ['deliveriesPayload'],
     fetchingDeliveriesFailure: ['deliveriesError'],
 
-    fetchingDeliveryRequest: null,
+    fetchingDeliveryRequest: ['deliveryData'],
     fetchingDeliverySuccess: ['deliveryPayload'],
     fetchingDeliveryFailure: ['deliveryError']
 
@@ -28,7 +28,10 @@ export const INITIAL_STATE = Immutable({
 
     deliveryFetching: false,
     deliveryError: null,
-    deliveryPayload: {}
+    deliveryPayload: {
+        delivery: {},
+        customer:{}
+    }
 })
 
 /* ------------- Selectors ------------- */

@@ -22,6 +22,7 @@ class ConfirmedDeliveries extends Component {
     }
     static propTypes = {
         attemptFetchDeliveries: PropTypes.func.isRequired,
+        attemptFetchDelivery: PropTypes.func.isRequired
     }
 
 
@@ -32,7 +33,7 @@ class ConfirmedDeliveries extends Component {
         })
     }
     renderTableRows = () => {
-        const { deliveriesPayload } = this.props.deliveries;
+        const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
         return deliveriesPayload.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
@@ -42,7 +43,7 @@ class ConfirmedDeliveries extends Component {
                     <td>{moment(singleDelivery.created_at).format('llll')}</td>
                     <td>{singleDelivery.receiver_name}</td>
                     <td><Badge variant="success">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
-                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal/></a></td>
+                    <td><a href={DEMO.BLANK_LINK}><DeliveryModal fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} singleDeliveryExtraDetails={deliveryPayload} deliveryId={singleDelivery.id}/></a></td>
                 </tr>
             );
         });
@@ -82,7 +83,7 @@ class ConfirmedDeliveries extends Component {
                                 <Pagination.First />
                                     <Pagination.Prev />
                                         <Pagination.Item>
-                                            1 of 10 pages
+                                            1 of 1 pages
                                         </Pagination.Item>
                                     <Pagination.Next />
                                 <Pagination.Last />
@@ -103,7 +104,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data))
+        attemptFetchDeliveries: (data) => dispatch(DeliveryActions.fetchingDeliveriesRequest(data)),
+        attemptFetchDelivery: (data) => dispatch(DeliveryActions.fetchingDeliveryRequest(data))
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ConfirmedDeliveries)
