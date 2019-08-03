@@ -52,7 +52,7 @@ class UnverifiedSenders extends Component {
                                 <Pagination.First />
                                     <Pagination.Prev />
                                         <Pagination.Item>
-                                            1 of 10 pages
+                                            1 of 1 pages
                                         </Pagination.Item>
                                     <Pagination.Next />
                                 <Pagination.Last />
