@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/orula_admin_frontend/precache-manifest.6dbe97f615f517ac07501db95c5187b1.js"
+  "/orula_admin_frontend/precache-manifest.e21ae227a3682833c89c52752efaeb2b.js"
 );
 
 self.addEventListener('message', (event) => {
