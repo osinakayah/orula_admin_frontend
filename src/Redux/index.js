@@ -6,7 +6,8 @@ export default () => {
     const rootReducer = combineReducers({
         nav: require('./NavigationRedux').reducer,
         login: require('./LoginRedux').reducer,
-        deliveries: require('./DeliveryRedux').reducer
+        deliveries: require('./DeliveryRedux').reducer,
+        customers: require('./CustomerRedux').reducer
     })
 
     return configureSore(rootReducer, rootSaga);

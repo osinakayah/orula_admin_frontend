@@ -1,1 +1,15 @@
-[]
+{
+  "customers": [
+    {
+      "id": 1,
+      "email": "ifeanyiosinakayah15@gmal.com",
+      "fullname": "Osinakayah Ifeanyi",
+      "phone_number": "08160831611",
+      "status": 0,
+      "created_at": "2019-08-03T13:24:58.879Z",
+      "updated_at": "2019-08-03T13:24:58.879Z",
+      "user_id": 1
+    }
+  ],
+  "total_pages": 1
+}

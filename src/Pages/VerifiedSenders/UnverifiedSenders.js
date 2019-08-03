@@ -1,11 +1,51 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Row, Badge, Col, Table, Pagination} from 'react-bootstrap';
+import CustomerActions from '../../Redux/CustomerRedux'
 
 import Aux from "../../hoc/_Aux";
 import Card from "../../Components/MainCard";
+import {connect} from "react-redux";
+import config from "../../config";
+import PropTypes from "prop-types";
 
-class UnverifiedSenders extends Component {
+class UnverifiedSenders extends PureComponent {
+    static propTypes = {
+        attemptFetchCustomers: PropTypes.func.isRequired,
+        customers: PropTypes.object.isRequired
+    }
+    constructor(props){
+        super(props);
+        this.state = {
+            page: 1,
+            status: config.UNVERIFIED_CUSTOMERS
+        }
+    }
+    componentDidMount() {
+        this.props.attemptFetchCustomers({
+            page: this.state.page,
+            status: this.state.status,
+        })
+    }
+
+    _renderUnverifiedCustomersRow = () => {
+        const {customers } = this.props.customers.customersPayload
+
+        return customers.map((singleCustomer) => {
+            return (
+                <tr key={singleCustomer.id}>
+                    <th scope="row">{singleCustomer.id}</th>
+                    <td>{singleCustomer.fullname}</td>
+                    <td>{singleCustomer.email}</td>
+                    <td>{singleCustomer.phone_number}</td>
+                    <td><Badge variant="warning"><i className="fa fa-times text-c-red f-10 m-r-15"/>Unverified</Badge>
+                    </td>
+                </tr>
+            )
+        });
+    }
+
     render() {
+        const {total_pages } = this.props.customers.customersPayload
         const pagStyle = {
             float: "right"
         };
@@ -25,37 +65,17 @@ class UnverifiedSenders extends Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Cynthia Ezechukwu</td>
-                                    <td>customer@orula.com</td>
-                                    <td>09031822660</td>
-                                    <td><Badge variant="warning"><i className="fa fa-times text-c-red f-10 m-r-15"/>Unverified</Badge></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Daniel Abayomi</td>
-                                    <td>customer@orula.com</td>
-                                    <td>09031822660</td>
-                                    <td><Badge variant="warning"><i className="fa fa-times text-c-red f-10 m-r-15"/>Unverified</Badge></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Ifeanyi Osinakayah</td>
-                                    <td>customer@orula.com</td>
-                                    <td>09031822660</td>
-                                    <td><Badge variant="warning"><i className="fa fa-times text-c-red f-10 m-r-15"/>Unverified</Badge></td>
-                                </tr>
+                                    {this._renderUnverifiedCustomersRow()}
                                 </tbody>
                             </Table>
                             <Pagination style={pagStyle} size="sm">
-                                <Pagination.First />
-                                    <Pagination.Prev />
-                                        <Pagination.Item>
-                                            1 of 1 pages
-                                        </Pagination.Item>
-                                    <Pagination.Next />
-                                <Pagination.Last />
+                                <Pagination.First/>
+                                <Pagination.Prev/>
+                                <Pagination.Item>
+                                    {this.state.page} of {total_pages} pages
+                                </Pagination.Item>
+                                <Pagination.Next/>
+                                <Pagination.Last/>
                             </Pagination>
                         </Card>
                     </Col>
@@ -65,4 +85,15 @@ class UnverifiedSenders extends Component {
     }
 }
 
-export default UnverifiedSenders;
+const mapStateToProps = state => {
+    return {
+        customers: state.customers
+    };
+};
+const mapDispatchToProps = dispatch => {
+    return {
+        attemptFetchCustomers: data => dispatch(CustomerActions.fetchingCustomersRequest(data))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UnverifiedSenders)

@@ -19,7 +19,7 @@ export  function *getFetchingDeliveriesSaga(api, action) {
 }
 
 export function *getFetchingDeliverySaga(api, action) {
-    console.log(action)
+
     const { deliveryData } = action;
     const response = yield call(api.getFetchingDelivery, deliveryData);
 

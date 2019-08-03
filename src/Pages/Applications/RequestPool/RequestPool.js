@@ -20,7 +20,8 @@ class RequestPool extends PureComponent {
     constructor(props){
         super(props)
         this.state = {
-            page: 1
+            page: 1,
+            status: config.DELIVERY_INITIATED
         }
     }
     static propTypes = {
@@ -32,13 +33,28 @@ class RequestPool extends PureComponent {
     componentDidMount() {
         this.props.attemptFetchDeliveries({
             page: this.state.page,
-            status: config.DELIVERY_INITIATED
+            status: this.state.status,
         })
     }
 
-    renderTableRows = () => {
+    _renderPagination(){
+        const { total_pages } = this.props.deliveries.deliveriesPayload;
+        let active = this.state.page;
+        const items = [];
+        for (let number = 1; number <= total_pages; number++) {
+            items.push(
+                <Pagination.Item key={number} active={number === active}>
+                    {number}
+                </Pagination.Item>,
+            );
+        }
+    }
+
+
+    _renderTableRows = () => {
         const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
-        return deliveriesPayload.map((singleDelivery) => {
+
+        return deliveriesPayload.deliveries.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
                     <th scope="row">{singleDelivery.id}</th>
@@ -57,6 +73,7 @@ class RequestPool extends PureComponent {
         const pagStyle = {
             float: "right"
         };
+        const { total_pages } = this.props.deliveries.deliveriesPayload;
         
         const { deliveries } = this.props;
         return (
@@ -81,7 +98,7 @@ class RequestPool extends PureComponent {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                     {this.renderTableRows()}
+                                     {this._renderTableRows()}
                                     </tbody>
                                 </Table>
                             </LoadingOverlay>
@@ -89,7 +106,7 @@ class RequestPool extends PureComponent {
                                 <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of 1 pages
+                                        1 of {total_pages} pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                                 <Pagination.Last />

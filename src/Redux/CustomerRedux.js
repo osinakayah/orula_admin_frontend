@@ -3,11 +3,11 @@ import Immutable from 'seamless-immutable'
 
 /* ------------- Types and Action Creators ------------- */
 const { Types, Creators } = createActions({
-    fetchingCustomersRequest: null,
+    fetchingCustomersRequest: ['customersData'],
     fetchingCustomersSuccess: ['customersPayload'],
     fetchingCustomersFailure: ['customersError'],
 
-    fetchingCustomerRequest: null,
+    fetchingCustomerRequest: ['customerData'],
     fetchingCustomerSuccess: ['customerPayload'],
     fetchingCustomerFailure: ['customerError']
 })
@@ -18,7 +18,10 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-    customersPayload: [],
+    customersPayload: {
+        customers: [],
+        total_pages: 0
+    },
     customersError: null,
     customersFetching: false,
 

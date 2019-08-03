@@ -21,8 +21,10 @@ export default Creators
 /* ------------- Initial State ------------- */
 
 export const INITIAL_STATE = Immutable({
-    deliveriesData: null,
-    deliveriesPayload: [],
+    deliveriesPayload: {
+        deliveries: [],
+        total_pages: 0
+    },
     deliveriesError: null,
     deliveriesFetching: false,
 

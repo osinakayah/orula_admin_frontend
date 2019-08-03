@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Row, Col, Table, Badge, Pagination} from 'react-bootstrap';
 
 import Aux from "../../hoc/_Aux";
@@ -13,11 +13,12 @@ import {formatNumberAsCurency, parseDeliveryStatus} from "../../Utils";
 import DEMO from "../../store/constant";
 import DeliveryModal from "../../Components/Modals/DeliveryModal";
 
-class ConfirmedDeliveries extends Component {
+class ConfirmedDeliveries extends PureComponent {
     constructor(props){
         super(props)
         this.state = {
-            page: 1
+            page: 1,
+            status: config.DELIVERY_RECOVERY_INITIATED
         }
     }
     static propTypes = {
@@ -29,12 +30,12 @@ class ConfirmedDeliveries extends Component {
     componentDidMount() {
         this.props.attemptFetchDeliveries({
             page: this.state.page,
-            status: config.DELIVERY_RECOVERY_INITIATED
+            status: this.state.status,
         })
     }
     renderTableRows = () => {
         const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
-        return deliveriesPayload.map((singleDelivery) => {
+        return deliveriesPayload.deliveries.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
                     <th scope="row">{singleDelivery.id}</th>
@@ -49,6 +50,7 @@ class ConfirmedDeliveries extends Component {
         });
     }
     render() {
+        const { total_pages } = this.props.deliveries.deliveriesPayload;
         const pagStyle = {
             float: "right"
         };
@@ -83,7 +85,7 @@ class ConfirmedDeliveries extends Component {
                                 <Pagination.First />
                                     <Pagination.Prev />
                                         <Pagination.Item>
-                                            1 of 1 pages
+                                            1 of {total_pages} pages
                                         </Pagination.Item>
                                     <Pagination.Next />
                                 <Pagination.Last />

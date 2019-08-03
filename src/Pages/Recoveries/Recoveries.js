@@ -16,7 +16,8 @@ class Recoveries extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 1
+            page: 1,
+            status: config.DELIVERY_RECOVERY_INITIATED
         }
     }
 
@@ -27,13 +28,13 @@ class Recoveries extends Component {
 
     componentDidMount() {
         this.props.attemptFetchRecoveries({
-            page: 1,
-            status: config.DELIVERY_RECOVERY_INITIATED
+            page: this.state.page,
+            status: this.state.status
         })
     }
     _renderClaimedRecoveries = () => {
         const { deliveriesPayload } = this.props.deliveries;
-        return deliveriesPayload.map((singleRecovery) => {
+        return deliveriesPayload.deliveries.map((singleRecovery) => {
             return (
                 <tr className="unread">
                     <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/>
@@ -54,7 +55,7 @@ class Recoveries extends Component {
 
     _renderPendingRecoveries =() => {
         const { deliveriesPayload } = this.props.deliveries;
-        return deliveriesPayload.map((singleRecovery) => {
+        return deliveriesPayload.deliveries.map((singleRecovery) => {
             return (
                 <tr className="unread">
                     <td><img className="rounded-circle" style={{width: '40px'}} src={avatar1} alt="activity-user"/>
@@ -73,6 +74,7 @@ class Recoveries extends Component {
     }
 
     render() {
+        const { total_pages } = this.props.deliveries.deliveriesPayload;
         const pagStyle = {
             float: "right"
         };
@@ -116,7 +118,7 @@ class Recoveries extends Component {
                             <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of 1 pages
+                                        {this.state.page} of {total_pages} pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                             <Pagination.Last />
