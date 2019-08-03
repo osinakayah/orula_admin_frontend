@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9822cf0475a9dfd9f91b0e93f6a4cec9",
+    "revision": "a6b36c4a8204b1e3f1d5519eb38fd552",
     "url": "/orula_admin_frontend/index.html"
   },
   {
@@ -92,12 +92,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orula_admin_frontend/static/js/21.6a9964a4.chunk.js"
   },
   {
-    "revision": "3ae793543c06bf7ce6ca",
-    "url": "/orula_admin_frontend/static/js/22.16decad8.chunk.js"
+    "revision": "56ff6b0a0f05e1699d27",
+    "url": "/orula_admin_frontend/static/js/22.b5365e20.chunk.js"
   },
   {
-    "revision": "e8074fda91cb32a580d6",
-    "url": "/orula_admin_frontend/static/js/23.a5efd783.chunk.js"
+    "revision": "2dbea5ceb7ad46d735b3",
+    "url": "/orula_admin_frontend/static/js/23.d6a36df1.chunk.js"
   },
   {
     "revision": "e12e66669bd6a3730de4",
@@ -196,8 +196,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orula_admin_frontend/static/js/main.1782e2a7.chunk.js"
   },
   {
-    "revision": "877ca4473afc3f2475b6",
-    "url": "/orula_admin_frontend/static/js/runtime~main.dd0b82ae.js"
+    "revision": "e0ff0026acbbf68b03ca",
+    "url": "/orula_admin_frontend/static/js/runtime~main.ecf23b67.js"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
