@@ -22,17 +22,17 @@ export default {
     configBlock: false, // not available in lite version
     layout6Background: 'linear-gradient(to right, #A445B2 0%, #D41872 52%, #FF0066 100%)', // used only for pre-layout = layout-6
     layout6BackSize: '', // used only for pre-layout = layout-6,
-    debug: true,
+    debug: false,
     authTokenLocalStorage: 'authTokenLocalStorage',
-    baseUrl: 'http://localhost:3000/api/v1/',
+    baseUrl: 'http://localhost:3000/api/',
 
-    DELIVERY_INITIATED: 0,
-    DELIVERY_ITEM_PICKED: 1,
-    DELIVERY_STARTED: 3,
-    DELIVERY_COMPLETED: 4,
+    DELIVERY_INITIATED: 'initiated',
+    DELIVERY_ITEM_PICKED: 'arrived',
+    DELIVERY_STARTED: 'started',
+    DELIVERY_COMPLETED: 'completed',
 
-    DELIVERY_RECOVERY_INITIATED: 10,
-    DELIVERY_RECOVERY_COMPLETED: 14,
+    DELIVERY_RECOVERY_INITIATED: 'r_initiated',
+    DELIVERY_RECOVERY_COMPLETED: 'r_completed',
     VERIFIED_CUSTOMERS: 1,
     UNVERIFIED_CUSTOMERS: 0
 };

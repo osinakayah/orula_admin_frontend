@@ -54,15 +54,15 @@ class RequestPool extends PureComponent {
     _renderTableRows = () => {
         const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
 
-        return deliveriesPayload.deliveries.map((singleDelivery) => {
+        return deliveriesPayload.data.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
                     <th scope="row">{singleDelivery.id}</th>
                     <td>{singleDelivery.name}</td>
                     <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
-                    <td>{moment(singleDelivery.created_at).format('llll')}</td>
-                    <td>{singleDelivery.receiver_name}</td>
-                    <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
+                    <td>{moment(singleDelivery.createdAt).format('llll')}</td>
+                    <td>{singleDelivery.receiverName}</td>
+                    <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.deliveryStatus)}</Badge></td>
                     <td><a href={DEMO.BLANK_LINK}><DeliveryModal singleDeliveryExtraDetails={deliveryPayload} fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} deliveryId={singleDelivery.id}/></a></td>
                 </tr>
             );
@@ -73,8 +73,8 @@ class RequestPool extends PureComponent {
         const pagStyle = {
             float: "right"
         };
-        const { total_pages } = this.props.deliveries.deliveriesPayload;
-        
+        const { pageCount } = this.props.deliveries.deliveriesPayload;
+
         const { deliveries } = this.props;
         return (
             <Aux>
@@ -88,7 +88,7 @@ class RequestPool extends PureComponent {
                                 <Table striped responsive>
                                     <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>Delivery Id</th>
                                         <th>Item</th>
                                         <th>Amount</th>
                                         <th>Date</th>
@@ -106,7 +106,7 @@ class RequestPool extends PureComponent {
                                 <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        1 of {total_pages} pages
+                                        1 of {pageCount} pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                                 <Pagination.Last />

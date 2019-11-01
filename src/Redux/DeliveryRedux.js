@@ -22,8 +22,8 @@ export default Creators
 
 export const INITIAL_STATE = Immutable({
     deliveriesPayload: {
-        deliveries: [],
-        total_pages: 0
+        data: [],
+        pageCount: 0
     },
     deliveriesError: null,
     deliveriesFetching: false,
@@ -31,8 +31,24 @@ export const INITIAL_STATE = Immutable({
     deliveryFetching: false,
     deliveryError: null,
     deliveryPayload: {
-        delivery: {},
-        customer:{}
+        id: 0,
+        name: "",
+        description: "null",
+        reasonForFailure: "null",
+        deliveryStatus: "",
+        deliveryTimeType: "",
+        amount: 0,
+        pickUpAddress: "",
+        destinationAddress: "",
+        receiverName: "",
+        receiverPhoneNumber: "",
+        createdAt: "",
+        updatedAt: "",
+        sender: {
+            id: 0,
+            fullName: "",
+            phoneNumber: ""
+        }
     }
 })
 

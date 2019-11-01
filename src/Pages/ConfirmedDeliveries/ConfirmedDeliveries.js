@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import config from '../../config'
 import moment from "moment";
 import LoadingOverlay from 'react-loading-overlay';
-import {formatNumberAsCurency, parseDeliveryStatus} from "../../Utils";
+import {formatNumberAsCurency } from "../../Utils";
 import DEMO from "../../store/constant";
 import DeliveryModal from "../../Components/Modals/DeliveryModal";
 
@@ -35,22 +35,22 @@ class ConfirmedDeliveries extends PureComponent {
     }
     renderTableRows = () => {
         const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
-        return deliveriesPayload.deliveries.map((singleDelivery) => {
+        return deliveriesPayload.data.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
                     <th scope="row">{singleDelivery.id}</th>
                     <td>{singleDelivery.name}</td>
                     <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
-                    <td>{moment(singleDelivery.created_at).format('llll')}</td>
-                    <td>{singleDelivery.receiver_name}</td>
-                    <td><Badge variant="success">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
+                    <td>{moment(singleDelivery.createdAt).format('llll')}</td>
+                    <td>{singleDelivery.receiverName}</td>
+                    <td><Badge variant="success">{(singleDelivery.status)}</Badge></td>
                     <td><a href={DEMO.BLANK_LINK}><DeliveryModal fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} singleDeliveryExtraDetails={deliveryPayload} deliveryId={singleDelivery.id}/></a></td>
                 </tr>
             );
         });
     }
     render() {
-        const { total_pages } = this.props.deliveries.deliveriesPayload;
+        const { pageCount } = this.props.deliveries.deliveriesPayload;
         const pagStyle = {
             float: "right"
         };
@@ -85,7 +85,7 @@ class ConfirmedDeliveries extends PureComponent {
                                 <Pagination.First />
                                     <Pagination.Prev />
                                         <Pagination.Item>
-                                            1 of {total_pages} pages
+                                            1 of {pageCount} pages
                                         </Pagination.Item>
                                     <Pagination.Next />
                                 <Pagination.Last />

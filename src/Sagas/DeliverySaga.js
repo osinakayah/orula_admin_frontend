@@ -24,6 +24,7 @@ export function *getFetchingDeliverySaga(api, action) {
     const response = yield call(api.getFetchingDelivery, deliveryData);
 
     if (response.ok) {
+        console.log(response.data);
         yield put(DeliveryActions.fetchingDeliverySuccess(response.data))
     }
     else {

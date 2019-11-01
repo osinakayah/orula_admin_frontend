@@ -34,17 +34,17 @@ class Recoveries extends Component {
     }
     _renderClaimedRecoveries = () => {
         const { deliveriesPayload } = this.props.deliveries;
-        return deliveriesPayload.deliveries.map((singleRecovery) => {
+        return deliveriesPayload.data.map((singleRecovery) => {
             return (
                 <tr className="unread">
                     <td><img className="rounded-circle" style={{width: '40px'}} src={avatar2} alt="activity-user"/>
                     </td>
                     <td>
-                        <h6 className="mb-1">{singleRecovery.receiver_name}</h6>
-                        <p className="m-0">{singleRecovery.reason_for_failure}</p>
+                        <h6 className="mb-1">{singleRecovery.receiverName}</h6>
+                        <p className="m-0">{singleRecovery.reasonForFailure}</p>
                     </td>
                     <td>
-                        <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updated_at).format('llll')}</h6>
+                        <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updatedAt).format('llll')}</h6>
                     </td>
                     <td><Badge variant="success m-r-15"><i className="fa fa-check text-c-red f-10 m-r-15"/>Claimed</Badge><RecoveryModal/>
                     </td>
@@ -55,17 +55,17 @@ class Recoveries extends Component {
 
     _renderPendingRecoveries =() => {
         const { deliveriesPayload } = this.props.deliveries;
-        return deliveriesPayload.deliveries.map((singleRecovery) => {
+        return deliveriesPayload.data.map((singleRecovery) => {
             return (
                 <tr className="unread">
                     <td><img className="rounded-circle" style={{width: '40px'}} src={avatar1} alt="activity-user"/>
                     </td>
                     <td>
-                        <h6 className="mb-1">{singleRecovery.receiver_name}</h6>
-                        <p className="m-0">{singleRecovery.reason_for_failure}</p>
+                        <h6 className="mb-1">{singleRecovery.receiverName}</h6>
+                        <p className="m-0">{singleRecovery.reasonForFailure}</p>
                     </td>
                     <td>
-                        <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updated_at).format('llll')}</h6>
+                        <h6 className="text-muted"><i className="fa fa-circle text-c-green f-10 m-r-15"/>{moment(singleRecovery.updatedAt).format('llll')}</h6>
                     </td>
                     <td><RecoveryModal/></td>
                 </tr>
@@ -74,7 +74,7 @@ class Recoveries extends Component {
     }
 
     render() {
-        const { total_pages } = this.props.deliveries.deliveriesPayload;
+        const { pageCount } = this.props.deliveries.deliveriesPayload;
         const pagStyle = {
             float: "right"
         };
@@ -112,13 +112,13 @@ class Recoveries extends Component {
                             <Tab eventKey="claimed" title="Claimed Packages">
                                 {tabContent2}
                             </Tab>
-                            
+
                         </Tabs>
                         <Pagination style={pagStyle} size="sm">
                             <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        {this.state.page} of {total_pages} pages
+                                        {this.state.page} of {pageCount} pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                             <Pagination.Last />

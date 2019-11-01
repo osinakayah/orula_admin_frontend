@@ -10,13 +10,13 @@ export function formatNumberAsCurency (num){
 export function parseDeliveryStatus(status) {
     switch (status) {
         case config.DELIVERY_INITIATED:
-            return "Pending";
+            return config.DELIVERY_INITIATED;
         case config.DELIVERY_ITEM_PICKED:
-            return "Picked Up";
+            return config.DELIVERY_ITEM_PICKED;
         case config.DELIVERY_STARTED:
-            return "In Transit";
+            return config.DELIVERY_STARTED;
         case  config.DELIVERY_COMPLETED:
-            return "Completed";
+            return config.DELIVERY_COMPLETED;
         default:
             return "Unknown status"
     }

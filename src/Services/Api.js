@@ -22,10 +22,10 @@ const create = (token = null) => {
     }
 
     const getFetchingDeliveries = (data) => {
-        return api.get(`deliveries?status=${data.status}&page=${data.page}`)
+        return api.get(`deliveries?page=${data.page}&filter=deliveryStatus||eq||${data.status}&sort=createdAt,DESC`)
     }
     const getFetchingDelivery = (data) => {
-        return api.get(`deliveries/${data.id}`)
+        return api.get(`deliveries/${data.id}?join=sender`)
     }
     const getFetchingCustomers = (data) => {
         return api.get(`customers?status=${data.status}&page=${data.page}`)

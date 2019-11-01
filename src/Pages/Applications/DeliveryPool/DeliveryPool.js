@@ -8,7 +8,7 @@ import DeliveryModal from '../../../Components/Modals/DeliveryModal';
 import DeliveryActions from "../../../Redux/DeliveryRedux";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {formatNumberAsCurency, parseDeliveryStatus} from "../../../Utils";
+import { formatNumberAsCurency } from "../../../Utils";
 import moment from "moment";
 import LoadingOverlay from 'react-loading-overlay';
 import config from "../../../config";
@@ -35,16 +35,16 @@ class DeliveryPool extends Component {
     }
     _renderTableRows = () => {
         const { deliveriesPayload, deliveryPayload } = this.props.deliveries;
-        return deliveriesPayload.deliveries.map((singleDelivery) => {
+        return deliveriesPayload.data.map((singleDelivery) => {
             return (
                 <tr key={singleDelivery.id}>
                     <th scope="row">{singleDelivery.id}</th>
                     <td>{singleDelivery.name}</td>
                     <td>&#8358; {formatNumberAsCurency(singleDelivery.amount)}</td>
-                    <td>{moment(singleDelivery.created_at).format('llll')}</td>
+                    <td>{moment(singleDelivery.createdAt).format('llll')}</td>
                     <td>Product Name</td>
                     <td>{singleDelivery.receiver_name}</td>
-                    <td><Badge variant="warning">{parseDeliveryStatus(singleDelivery.status)}</Badge></td>
+                    <td><Badge variant="warning">{(singleDelivery.status)}</Badge></td>
                     <td><a href={DEMO.BLANK_LINK}><DeliveryModal fetchSingleDeliveryExtraDetails={this.props.attemptFetchDelivery} deliveryId={singleDelivery.id} singleDeliveryExtraDetails={deliveryPayload}/></a></td>
                 </tr>
             );
@@ -52,7 +52,7 @@ class DeliveryPool extends Component {
     }
 
     render() {
-        const { total_pages } = this.props.deliveries.deliveriesPayload;
+        const { pageCount } = this.props.deliveries.deliveriesPayload;
         const pagStyle = {
             float: "right"
         };
@@ -89,7 +89,7 @@ class DeliveryPool extends Component {
                                 <Pagination.First />
                                 <Pagination.Prev />
                                     <Pagination.Item>
-                                        {this.state.page} of {total_pages} pages
+                                        {this.state.page} of {pageCount} pages
                                     </Pagination.Item>
                                 <Pagination.Next />
                                 <Pagination.Last />

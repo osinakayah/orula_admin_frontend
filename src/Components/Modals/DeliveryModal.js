@@ -16,7 +16,6 @@ class DeliveryModal extends PureComponent {
     static propTypes = {
         deliveryId: PropTypes.number.isRequired,
         fetchSingleDeliveryExtraDetails: PropTypes.func.isRequired,
-        singleDeliveryExtraDetails: PropTypes.object.isRequired
     }
 
 
@@ -32,8 +31,9 @@ class DeliveryModal extends PureComponent {
 
     render() {
 
-        const { delivery, customer } = this.props.singleDeliveryExtraDetails
+        // const { delivery, customer } = this.props.singleDeliveryExtraDetails
 
+        const singleDelivery = this.props.singleDeliveryExtraDetails;
         const deliveryInfo = (
             <Row>
                 <Col>
@@ -47,7 +47,7 @@ class DeliveryModal extends PureComponent {
                                 </div>
 
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{customer.fullname}</p>
+                                    <p className="m-b-0">{singleDelivery.sender.fullName}</p>
                                 </div>
                             </div>
                             <div className="row d-flex align-items-center mb-2">
@@ -56,7 +56,7 @@ class DeliveryModal extends PureComponent {
                                 </div>
 
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{customer.phone_number}</p>
+                                    <p className="m-b-0">{singleDelivery.sender.phoneNumber}</p>
                                 </div>
                             </div>
                             <hr/>
@@ -66,7 +66,7 @@ class DeliveryModal extends PureComponent {
                                 </div>
 
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{delivery.pick_up_address}</p>
+                                    <p className="m-b-0">{singleDelivery.pickUpAddress}</p>
                                 </div>
                             </div>
                             <div className="progress m-t-50" style={{height: '3px'}}>
@@ -83,7 +83,7 @@ class DeliveryModal extends PureComponent {
                                 </div>
 
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{delivery.receiver_name}</p>
+                                    <p className="m-b-0">{singleDelivery.receiverName}</p>
                                 </div>
                             </div>
                             <div className="row d-flex align-items-center mb-2">
@@ -91,7 +91,7 @@ class DeliveryModal extends PureComponent {
                                     <h6 className="f-w-300 m-b-0">Phone:</h6>
                                 </div>
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{delivery.receiver_phone_number}</p>
+                                    <p className="m-b-0">{singleDelivery.receiverPhoneNumber}</p>
                                 </div>
                             </div>
                             <hr/>
@@ -100,7 +100,7 @@ class DeliveryModal extends PureComponent {
                                     <h6 className="f-w-300 m-b-0">Receiver Address:</h6>
                                 </div>
                                 <div className="col-8 text-left">
-                                    <p className="m-b-0">{delivery.destination_address}</p>
+                                    <p className="m-b-0">{singleDelivery.destinationAddress}</p>
                                 </div>
                             </div>
                             <div className="progress m-t-30" style={{height: '3px'}}>
@@ -186,7 +186,7 @@ class DeliveryModal extends PureComponent {
                             <h6 className="f-w-300 m-b-0">Package:</h6>
                         </div>
                         <div className="col-8 text-left">
-                            <p className="m-b-0">{delivery.name}</p>
+                            <p className="m-b-0">{singleDelivery.name}</p>
                         </div>
                     </div>
                     <div className="row d-flex align-items-center mb-2">

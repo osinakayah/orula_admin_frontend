@@ -10,10 +10,11 @@ export  function *postLoginSaga(api, action) {
     const response = yield call(api.postLogin, data);
 
     if (response.ok) {
-        reactLocalStorage.set(config.authTokenLocalStorage, response.headers.authorization);
+        reactLocalStorage.set(config.authTokenLocalStorage, response.data.access_token);
 
         yield put(LoginActions.loginSuccess(response.data))
-        window.location = 'https://osinakayah.github.io/orula_admin_frontend/'
+
+        window.location = 'http://localhost:3001'
     }
     else {
         ToastsStore.error(response.data.error);
